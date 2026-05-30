@@ -91,7 +91,11 @@ export function Header({
   const resolvedMenuGroups = menuGroups
     .filter((group) => {
       if (!isAuthenticated) {
-        return group.label !== "Recruiter" && group.label !== "Platform Admin";
+        return (
+          group.label !== "Recruiter" &&
+          group.label !== "Platform Admin" &&
+          group.label !== "Account"
+        );
       }
 
       if (group.label === "Platform Admin") {
