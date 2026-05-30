@@ -23,6 +23,8 @@ type Props = {
   secondStat?: HeroStat;
   studentStat?: HeroStudentStat;
   avatars?: HeroAvatar[];
+  mediaImageSrc?: string;
+  mediaImageAlt?: string;
 };
 
 export default function HeroBannerTwelve({
@@ -36,6 +38,8 @@ export default function HeroBannerTwelve({
   secondStat = { value: "200+", label: "Categories" },
   studentStat = { label: "80k+ Students" },
   avatars = [],
+  mediaImageSrc,
+  mediaImageAlt,
 }: Props) {
   return (
     <div className="hero-banner-twelve pt-225 pb-120 lg-pb-80 md-pt-200">
@@ -82,12 +86,14 @@ export default function HeroBannerTwelve({
                 style={{}}
               />
               <div className="media-img">
-                <img
-                  src="jano/images/media/c6da3ddb-8df9-429e-aebd-dc7126933d3f.png"
-                  alt=""
-                  className="lazy-img"
-                  style={{}}
-                />
+                {mediaImageSrc ? (
+                  <img
+                    src={mediaImageSrc}
+                    alt={mediaImageAlt}
+                    className="lazy-img"
+                    style={{}}
+                  />
+                ) : null}
               </div>
               <div
                 className="card-style card-one d-flex flex-column justify-content-center align-items-center wow fadeInLeft"
