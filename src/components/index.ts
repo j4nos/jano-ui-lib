@@ -20,7 +20,6 @@ export * from "./FormSubmitButton";
 export * from "./Header";
 export * from "./JanoFooter";
 export * from "./ModuleDialogue";
-export * from "./NotFoundState";
 export * from "./PagePaginationOne";
 export * from "./PageSubnav";
 export * from "./PanelForm";
