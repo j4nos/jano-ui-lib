@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { CheckmarkList, type CheckmarkListItem } from "./CheckmarkList";
 
 type FeatureButton = {
   href: string;
@@ -15,7 +16,7 @@ type Props = {
   sectionLabel?: string;
   title?: ReactNode;
   description?: ReactNode;
-  items?: ReactNode[];
+  items?: readonly CheckmarkListItem[];
   buttons?: FeatureButton[];
   mainImageSrc?: string;
   mainImageAlt?: string;
@@ -80,13 +81,7 @@ export function FancyFeatureThirteen({
                 <h2 className="main-title fw-500 tx-dark m0">{title}</h2>
               </div>
               <p className="fs-20 pt-30 pb-30 lg-pb-20">{description}</p>
-              <ul className="style-none list-item">
-                {items.map((item, index) => (
-                  <li key={`${index}-${typeof item === "string" ? item : "item"}`}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <CheckmarkList items={items} />
               <div className="d-sm-flex align-items-center platform-button-group-three mt-55 lg-mt-30">
                 {buttons.map((button) => (
                   <a

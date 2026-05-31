@@ -12,6 +12,7 @@ export * from "./Button";
 export * from "./CompareTable";
 export * from "./CopyButton";
 export * from "./CtaButton";
+export * from "./CheckmarkList";
 export * from "./DataCardGrid";
 export * from "./ErrorPageContent";
 export * from "./FancyShortBannerSixteen";

@@ -1,7 +1,6 @@
-type AccordionItem = {
-  title: string;
-  description: string;
-};
+import FancyFeatureFortyOneAccordion, {
+  type FancyFeatureFortyOneAccordionItem,
+} from "./FancyFeatureFortyOneAccordion";
 
 type GoalCard = {
   tier: string;
@@ -15,7 +14,7 @@ type GoalCard = {
 type Props = {
   sectionLabel?: string;
   title?: string;
-  items?: [AccordionItem, AccordionItem, AccordionItem];
+  items?: readonly FancyFeatureFortyOneAccordionItem[];
   ctaLabel?: string;
   ctaHref?: string;
   cards?: [GoalCard, GoalCard, GoalCard, GoalCard];
@@ -90,80 +89,10 @@ export default function FancyFeatureFortyOne({
               <div className="sc-title text-uppercase">{sectionLabel}</div>
               <h2 className="main-title fw-500 tx-dark m0">{title}</h2>
             </div>
-            <div className="accordion accordion-style-six" id="accordionOne">
-              <div className="accordion-item">
-                <div className="accordion-header" id="headingOne">
-                  <button
-                    className="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="false"
-                    aria-controls="collapseOne"
-                  >
-                    {items[0].title}
-                  </button>
-                </div>
-                <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionOne"
-                >
-                  <div className="accordion-body">
-                    <p>{items[0].description}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <div className="accordion-header" id="headingTwo">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    {items[1].title}
-                  </button>
-                </div>
-                <div
-                  id="collapseTwo"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingTwo"
-                  data-bs-parent="#accordionOne"
-                >
-                  <div className="accordion-body">
-                    <p>{items[1].description}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="accordion-item">
-                <div className="accordion-header" id="headingThree">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="true"
-                    aria-controls="collapseThree"
-                  >
-                    {items[2].title}
-                  </button>
-                </div>
-                <div
-                  id="collapseThree"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#accordionOne"
-                >
-                  <div className="accordion-body">
-                    <p>{items[2].description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>{" "}
+            <FancyFeatureFortyOneAccordion
+              accordionId="accordionOne"
+              items={items}
+            />{" "}
             {/* /.accordion-style-six */}
             <a href={ctaHref} className="btn-one fw-500 mt-50 md-mt-40">
               {ctaLabel}
