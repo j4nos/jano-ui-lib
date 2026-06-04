@@ -38,8 +38,8 @@ export default function HeroBannerTwelve({
   secondStat = { value: "200+", label: "Categories" },
   studentStat = { label: "80k+ Students" },
   avatars = [],
-  mediaImageSrc,
-  mediaImageAlt,
+  mediaImageSrc = "jano/images/assets/ils_12.svg",
+  mediaImageAlt = "Hero illustration",
 }: Props) {
   return (
     <div className="hero-banner-twelve pt-225 pb-120 lg-pb-80 md-pt-200">
@@ -103,7 +103,6 @@ export default function HeroBannerTwelve({
                 <h4>{firstStat.value}</h4>
                 <p>{firstStat.label}</p>
               </div>{" "}
-              {/* /.card-one */}
               <div
                 className="card-style card-two d-flex flex-column justify-content-center align-items-center wow fadeInRight"
                 data-wow-delay="0.2"
@@ -112,7 +111,6 @@ export default function HeroBannerTwelve({
                 <h4>{secondStat.value}</h4>
                 <p>{secondStat.label}</p>
               </div>{" "}
-              {/* /.card-one */}
               <div
                 className="card-style card-three d-flex flex-column justify-content-center align-items-center wow fadeInRight"
                 data-wow-delay="0.3"
@@ -149,7 +147,6 @@ export default function HeroBannerTwelve({
                   </span>
                 </div>
               </div>{" "}
-              {/* /.card-one */}
               <img
                 src="jano/images/shape/shape_146.svg"
                 alt=""
@@ -165,9 +162,7 @@ export default function HeroBannerTwelve({
             </div>
           </div>
         </div>{" "}
-        {/* /.row */}
       </div>{" "}
-      {/* /.container */}
     </div>
   );
 }

@@ -58,9 +58,7 @@ export default function FancyFeatureFortyOneAccordion({
               className={`accordion-collapse collapse${isOpen ? " show" : ""}`}
               aria-labelledby={headingId}
             >
-              <div className="accordion-body">
-                {item.description}
-              </div>
+              <div className="accordion-body">{item.description}</div>
             </div>
           </div>
         );

@@ -93,7 +93,6 @@ export default function FancyFeatureFortyOne({
               accordionId="accordionOne"
               items={items}
             />{" "}
-            {/* /.accordion-style-six */}
             <a href={ctaHref} className="btn-one fw-500 mt-50 md-mt-40">
               {ctaLabel}
             </a>
@@ -121,7 +120,6 @@ export default function FancyFeatureFortyOne({
                       {cards[0].badge}
                     </span>
                   </a>{" "}
-                  {/* /.card-style-nineteen */}
                   <a
                     href={cards[1].href ?? "#"}
                     className="card-style-nineteen position-relative d-flex flex-column tran3s mb-40 xs-mb-20"
@@ -147,7 +145,6 @@ export default function FancyFeatureFortyOne({
                       {cards[1].badge}
                     </span>
                   </a>{" "}
-                  {/* /.card-style-nineteen */}
                 </div>
                 <div className="col-sm-6 d-flex flex-column">
                   <a
@@ -166,7 +163,6 @@ export default function FancyFeatureFortyOne({
                       {cards[2].badge}
                     </span>
                   </a>{" "}
-                  {/* /.card-style-nineteen */}
                   <a
                     href={cards[3].href ?? "#"}
                     className="card-style-nineteen position-relative d-flex flex-column tran3s mb-40 xs-mb-20"
@@ -183,7 +179,6 @@ export default function FancyFeatureFortyOne({
                       {cards[3].badge}
                     </span>
                   </a>{" "}
-                  {/* /.card-style-nineteen */}
                 </div>
               </div>
               <img
@@ -199,7 +194,6 @@ export default function FancyFeatureFortyOne({
                 style={{}}
               />
             </div>{" "}
-            {/* /.wrapper */}
           </div>
         </div>
       </div>

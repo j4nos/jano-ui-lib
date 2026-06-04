@@ -71,7 +71,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[0].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -91,7 +90,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[1].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -111,7 +109,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[2].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -131,7 +128,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[3].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -151,7 +147,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[4].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -171,7 +166,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[5].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -191,7 +185,6 @@ export default function FancyFeatureForty({
                 </h4>
                 <p>{categories[6].subtitle}</p>
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
               <a
@@ -206,7 +199,6 @@ export default function FancyFeatureForty({
                   className="m-auto"
                 />
               </a>{" "}
-              {/* /.card-style-eighteen */}
             </div>
           </div>
         </div>

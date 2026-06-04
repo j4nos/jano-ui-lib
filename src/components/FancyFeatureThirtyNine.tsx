@@ -36,7 +36,6 @@ export default function FancyFeatureThirtyNine({
                 <p className="m0">{items[0].description}</p>
               </div>
             </div>{" "}
-            {/* /.card-style-seventeen */}
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="card-style-seventeen d-flex align-items-center mb-40">
@@ -53,7 +52,6 @@ export default function FancyFeatureThirtyNine({
                 <p className="m0">{items[1].description}</p>
               </div>
             </div>{" "}
-            {/* /.card-style-seventeen */}
           </div>
           <div className="col-lg-4 col-md-6">
             <div className="card-style-seventeen d-flex align-items-center mb-40">
@@ -70,7 +68,6 @@ export default function FancyFeatureThirtyNine({
                 <p className="m0">{items[2].description}</p>
               </div>
             </div>{" "}
-            {/* /.card-style-seventeen */}
           </div>
         </div>
       </div>
