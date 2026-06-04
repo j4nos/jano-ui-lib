@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-type BrandWordmarkProps = {
+export type BrandWordmarkProps = {
   href?: string;
   text?: string;
   imageSrc?: string;

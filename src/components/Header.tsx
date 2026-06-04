@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { BrandWordmark } from "./BrandWordmark";
 import { ToastIndicator } from "./ToastIndicator";
+import type { BrandWordmarkProps } from "./BrandWordmark";
 
 export type HeaderMenuItem = {
   label: string;
@@ -20,8 +22,10 @@ export type HeaderMenuGroup = {
 
 type HeaderTone = "light" | "dark";
 
+export type HeaderBrandProps = Omit<BrandWordmarkProps, "href">;
+
 type HeaderProps = {
-  brand: ReactNode;
+  brand: HeaderBrandProps;
   brandHref?: string;
   tone?: HeaderTone;
   showNav?: boolean;
@@ -127,9 +131,7 @@ export function Header({
         <div className="inner-content position-relative">
           <div className="d-flex align-items-center justify-content-between">
             <div className="logo order-lg-0">
-              <Link href={brandHref} aria-label="Home">
-                {brand}
-              </Link>
+              <BrandWordmark {...brand} href={brandHref} />
             </div>
 
             <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center order-lg-3">
