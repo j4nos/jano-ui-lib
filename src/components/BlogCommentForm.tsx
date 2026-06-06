@@ -1,7 +1,12 @@
-import type { ReactNode } from "react";
+import type { ReactElement } from "react";
+import { Form } from "./Form";
+
+type BlogCommentFormChild =
+  | ReactElement<unknown, typeof Form>
+  | Array<ReactElement<unknown, typeof Form> | null>;
 
 type BlogCommentFormProps = {
-  children: ReactNode;
+  children: BlogCommentFormChild;
   id?: string;
   className?: string;
 };
