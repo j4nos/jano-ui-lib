@@ -1,25 +1,20 @@
 "use client";
 
+import { StatusMessage } from "../StatusMessage";
+
 type AuthStatusMessageProps = {
   tone: "error" | "info";
   children: string;
 };
 
+/**
+ * @deprecated Thin wrapper kept for backwards compatibility with the auth
+ * pages. Prefer the generic `StatusMessage` (variant="inline") directly.
+ */
 export function AuthStatusMessage({ tone, children }: AuthStatusMessageProps) {
   return (
-    <div
-      style={{
-        marginTop: 20,
-        marginBottom: 6,
-        borderRadius: 10,
-        padding: "14px 16px",
-        background: tone === "error" ? "#FFE8E8" : "#EEF4FF",
-        color: "#000",
-        fontSize: 15,
-        lineHeight: "24px",
-      }}
-    >
+    <StatusMessage tone={tone} variant="inline">
       {children}
-    </div>
+    </StatusMessage>
   );
 }

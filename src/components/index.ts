@@ -20,6 +20,7 @@ export * from "./FormSubmitButton";
 export * from "./ModuleDialogue";
 export * from "./PageSubnav";
 export * from "./PanelForm";
+export * from "./StatusMessage";
 export * from "./TitleStyleThree";
 export * from "./ToastIndicator";
 export * from "./auth";
