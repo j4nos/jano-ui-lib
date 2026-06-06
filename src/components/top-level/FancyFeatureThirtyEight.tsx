@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { CheckmarkList, type CheckmarkListItem } from "./CheckmarkList";
+import { CheckmarkList, type CheckmarkListItem } from "../CheckmarkList";
 
 type FeatureButton = {
   href: string;

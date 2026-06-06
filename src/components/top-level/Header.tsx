@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { BrandWordmark } from "./BrandWordmark";
-import { ToastIndicator } from "./ToastIndicator";
-import type { BrandWordmarkProps } from "./BrandWordmark";
+import { BrandWordmark } from "../BrandWordmark";
+import { ToastIndicator } from "../ToastIndicator";
+import type { BrandWordmarkProps } from "../BrandWordmark";
 
 export type HeaderMenuItem = {
   label: string;

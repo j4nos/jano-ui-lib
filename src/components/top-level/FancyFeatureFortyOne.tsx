@@ -1,6 +1,6 @@
 import FancyFeatureFortyOneAccordion, {
   type FancyFeatureFortyOneAccordionItem,
-} from "./FancyFeatureFortyOneAccordion";
+} from "../FancyFeatureFortyOneAccordion";
 
 type GoalCard = {
   tier: string;

@@ -1,15 +1,15 @@
 "use client";
 
 import type { ReactElement } from "react";
-import { BlogCommentForm } from "./BlogCommentForm";
-import { BlogSectionSevenColumn } from "./BlogSectionSevenColumn";
-import { DataCardGrid } from "./DataCardGrid";
-import FancyFeatureFortyOneAccordion from "./FancyFeatureFortyOneAccordion";
-import type { DataCardGridProps } from "./DataCardGrid";
-import { TitleStyleThree } from "./TitleStyleThree";
-import type { TitleStyleThreeProps } from "./TitleStyleThree";
-import type { BlogSectionSevenColumnProps } from "./BlogSectionSevenColumn";
-import type { FancyFeatureFortyOneAccordionProps } from "./FancyFeatureFortyOneAccordion";
+import { BlogCommentForm } from "../BlogCommentForm";
+import { BlogSectionSevenColumn } from "../BlogSectionSevenColumn";
+import { DataCardGrid } from "../DataCardGrid";
+import FancyFeatureFortyOneAccordion from "../FancyFeatureFortyOneAccordion";
+import type { DataCardGridProps } from "../DataCardGrid";
+import { TitleStyleThree } from "../TitleStyleThree";
+import type { TitleStyleThreeProps } from "../TitleStyleThree";
+import type { BlogSectionSevenColumnProps } from "../BlogSectionSevenColumn";
+import type { FancyFeatureFortyOneAccordionProps } from "../FancyFeatureFortyOneAccordion";
 
 export type BlogSectionSevenBlock =
   | ReactElement<TitleStyleThreeProps, typeof TitleStyleThree>

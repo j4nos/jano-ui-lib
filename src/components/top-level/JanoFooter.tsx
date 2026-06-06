@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { FormSubmitButton } from "./FormSubmitButton";
+import { FormSubmitButton } from "../FormSubmitButton";
 
 export type JanoFooterLink = {
   label: string;
