@@ -1,7 +1,11 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { CheckmarkList, type CheckmarkListItem } from "./CheckmarkList";
+import {
+  CheckmarkList,
+  type CheckmarkColor,
+  type CheckmarkListItem,
+} from "./CheckmarkList";
 
 type FeatureButton = {
   href: string;
@@ -17,6 +21,7 @@ type Props = {
   title?: ReactNode;
   description?: ReactNode;
   items?: readonly CheckmarkListItem[];
+  checkColor?: CheckmarkColor;
   buttons?: FeatureButton[];
   mainImageSrc?: string;
   mainImageAlt?: string;
@@ -55,6 +60,7 @@ export function FancyFeatureThirteen({
     "Buy, store and share all your policies online",
     "Email & Live chat.",
   ],
+  checkColor = "pink",
   buttons = defaultButtons,
   mainImageSrc = "images/media/img_57.png",
   mainImageAlt = "",
@@ -81,7 +87,7 @@ export function FancyFeatureThirteen({
                 <h2 className="main-title fw-500 tx-dark m0">{title}</h2>
               </div>
               <p className="fs-20 pt-30 pb-30 lg-pb-20">{description}</p>
-              <CheckmarkList items={items} />
+              <CheckmarkList items={items} checkColor={checkColor} />
               <div className="d-sm-flex align-items-center platform-button-group-three mt-55 lg-mt-30">
                 {buttons.map((button) => (
                   <a
