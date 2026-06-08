@@ -37,6 +37,9 @@ type HeaderProps = {
   isAdmin?: boolean;
   userDisplayName?: string;
   onLogout?: () => void | Promise<void>;
+  /** When set, a Contact link is shown in the navbar right widget. */
+  contactHref?: string;
+  contactLabel?: string;
 };
 
 function resolveMenuBaseHref(pathname: string, menuBasePath: string) {
@@ -88,6 +91,8 @@ export function Header({
   isAdmin = false,
   userDisplayName = "",
   onLogout,
+  contactHref,
+  contactLabel = "Contact Us",
 }: HeaderProps) {
   const pathname = usePathname();
   const isLightTone = tone === "light";
@@ -134,7 +139,15 @@ export function Header({
               <BrandWordmark {...brand} href={brandHref} />
             </div>
 
-            <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center order-lg-3">
+            <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center gap-3 order-lg-3">
+              {contactHref ? (
+                <Link
+                  href={contactHref}
+                  className={`fw-500 tran3s ${isLightTone ? "text-white" : "tx-dark"}`}
+                >
+                  {contactLabel}
+                </Link>
+              ) : null}
               {isAuthenticated && userDisplayName ? (
                 <span
                   className={`fw-500 ${isLightTone ? "text-white" : "tx-dark"}`}

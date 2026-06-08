@@ -1,5 +1,7 @@
 export * from "./top-level";
 export * from "./BlockStyleEight";
+export { default as BlogCommentArea } from "./BlogCommentArea";
+export type { BlogComment } from "./BlogCommentArea";
 export * from "./BlogCommentForm";
 export * from "./BlogDetailsSection";
 export * from "./BlogSectionSevenColumn";

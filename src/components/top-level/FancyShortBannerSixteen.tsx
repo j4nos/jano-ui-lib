@@ -25,7 +25,7 @@ export function FancyShortBannerSixteen({
   href,
   disabled,
   onButtonClick,
-  className = "mt-20",
+  className = "mt-150",
 }: FancyShortBannerSixteenProps) {
   let button: ReactNode = buttonProp ?? null;
 
