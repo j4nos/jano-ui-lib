@@ -1,3 +1,4 @@
+export * from "./CheckboxField";
 export * from "./Fieldset";
 export * from "./FileInputField";
 export * from "./FormField";

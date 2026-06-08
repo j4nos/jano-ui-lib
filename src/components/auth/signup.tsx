@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import { Button } from "../Button";
+import { Column } from "../Column";
+import { Form } from "../Form";
+import { Row } from "../Row";
+import { CheckboxField } from "../forms/CheckboxField";
 import { AuthInputField } from "./AuthInputField";
 import { AuthPageShell } from "./AuthPageShell";
 import { AuthPasswordField } from "./AuthPasswordField";
-import { AuthStatusMessage } from "./AuthStatusMessage";
+import { StatusMessage } from "../StatusMessage";
 
 export interface SignupTemplateFormState {
   name: string;
@@ -103,17 +107,17 @@ export function Signup({
       }
     >
       {!hasAuthConfig ? (
-        <AuthStatusMessage tone="error">
+        <StatusMessage tone="error">
           Amplify Cognito auth is not configured in this environment.
-        </AuthStatusMessage>
+        </StatusMessage>
       ) : null}
       {message ? (
-        <AuthStatusMessage tone="info">{message}</AuthStatusMessage>
+        <StatusMessage tone="info">{message}</StatusMessage>
       ) : null}
-      {error ? <AuthStatusMessage tone="error">{error}</AuthStatusMessage> : null}
+      {error ? <StatusMessage tone="error">{error}</StatusMessage> : null}
 
       {!needsConfirmation ? (
-        <form
+        <Form
           className="user-data-form mt-40 lg-mt-30"
           method="post"
           onSubmit={(event) => {
@@ -121,8 +125,8 @@ export function Signup({
             void onSubmit(getSubmittedRegistrationForm(event.currentTarget));
           }}
         >
-          <div className="row">
-            <div className="col-12">
+          <Row>
+            <Column>
               <AuthInputField
                 id="name"
                 label="Name"
@@ -136,8 +140,8 @@ export function Signup({
                 }}
                 required
               />
-            </div>
-            <div className="col-12">
+            </Column>
+            <Column>
               <AuthInputField
                 id="email"
                 label="Email"
@@ -151,8 +155,8 @@ export function Signup({
                 }}
                 required
               />
-            </div>
-            <div className="col-12">
+            </Column>
+            <Column>
               <AuthPasswordField
                 id="password"
                 label="Password"
@@ -164,32 +168,29 @@ export function Signup({
                 }}
                 required
               />
-            </div>
-            <div className="col-12">
-              <div className="agreement-checkbox d-flex justify-content-between align-items-center">
-                <div>
-                  <input
-                    type="checkbox"
-                    id="agree_to_policy"
-                    name="agree_to_policy"
-                    checked={registrationForm.agreedToPolicy}
-                    onChange={(event) => {
-                      updateRegistrationField(
-                        "agreedToPolicy",
-                        event.currentTarget.checked,
-                      );
-                    }}
-                    required
-                  />
-                  <label htmlFor="agree_to_policy">
+            </Column>
+            <Column>
+              <CheckboxField
+                id="agree_to_policy"
+                name="agree_to_policy"
+                checked={registrationForm.agreedToPolicy}
+                onChange={(event) => {
+                  updateRegistrationField(
+                    "agreedToPolicy",
+                    event.currentTarget.checked,
+                  );
+                }}
+                required
+                label={
+                  <>
                     By clicking &quot;SIGN UP&quot; I agree to the{" "}
                     <Link href="/policy">Terms and Conditions</Link> and{" "}
                     <Link href="/gdpr">Privacy Policy</Link>.
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div className="col-12">
+                  </>
+                }
+              />
+            </Column>
+            <Column>
               <Button
                 type="button"
                 tone="form"
@@ -206,8 +207,8 @@ export function Signup({
               >
                 {isSubmitting ? "Registering..." : "Sign Up"}
               </Button>
-            </div>
-            <div className="col-12">
+            </Column>
+            <Column>
               <Button
                 type="button"
                 tone="form"
@@ -219,11 +220,11 @@ export function Signup({
               >
                 Continue with Google
               </Button>
-            </div>
-          </div>
-        </form>
+            </Column>
+          </Row>
+        </Form>
       ) : (
-        <form
+        <Form
           className="user-data-form mt-40 lg-mt-30"
           method="post"
           onSubmit={(event) => {
@@ -233,14 +234,14 @@ export function Signup({
             );
           }}
         >
-          <div className="row">
-            <div className="col-12">
+          <Row>
+            <Column>
               <div className="input-group-meta mb-25">
                 <label>Email</label>
                 <div className="mt-10 fw-500 tx-dark">{pendingEmail}</div>
               </div>
-            </div>
-            <div className="col-12">
+            </Column>
+            <Column>
               <AuthInputField
                 id="confirmationCode"
                 label="Confirmation code"
@@ -257,8 +258,8 @@ export function Signup({
                 required
                 wrapperClassName="input-group-meta mb-25"
               />
-            </div>
-            <div className="col-12">
+            </Column>
+            <Column>
               <Button
                 type="button"
                 tone="form"
@@ -275,8 +276,8 @@ export function Signup({
               >
                 {isSubmitting ? "Confirming..." : "Confirm registration"}
               </Button>
-            </div>
-            <div className="col-12">
+            </Column>
+            <Column>
               <Button
                 type="button"
                 tone="form"
@@ -288,9 +289,9 @@ export function Signup({
               >
                 {isSubmitting ? "Please wait..." : "Resend code"}
               </Button>
-            </div>
-          </div>
-        </form>
+            </Column>
+          </Row>
+        </Form>
       )}
     </AuthPageShell>
   );

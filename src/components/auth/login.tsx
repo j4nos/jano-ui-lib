@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import { Button } from "../Button";
+import { Column } from "../Column";
+import { Form } from "../Form";
+import { Row } from "../Row";
+import { CheckboxField } from "../forms/CheckboxField";
 import { AuthInputField } from "./AuthInputField";
 import { AuthPageShell } from "./AuthPageShell";
 import { AuthPasswordField } from "./AuthPasswordField";
-import { AuthStatusMessage } from "./AuthStatusMessage";
+import { StatusMessage } from "../StatusMessage";
 
 export interface LoginTemplateFormState {
   email: string;
@@ -65,16 +69,16 @@ export function Login({
       }
     >
       {!hasAuthConfig ? (
-        <AuthStatusMessage tone="error">
+        <StatusMessage tone="error">
           Amplify Cognito auth is not configured in this environment.
-        </AuthStatusMessage>
+        </StatusMessage>
       ) : null}
       {message ? (
-        <AuthStatusMessage tone="info">{message}</AuthStatusMessage>
+        <StatusMessage tone="info">{message}</StatusMessage>
       ) : null}
-      {error ? <AuthStatusMessage tone="error">{error}</AuthStatusMessage> : null}
+      {error ? <StatusMessage tone="error">{error}</StatusMessage> : null}
 
-      <form
+      <Form
         className="user-data-form mt-40 lg-mt-30"
         method="post"
         onSubmit={(event) => {
@@ -82,8 +86,8 @@ export function Login({
           void onSubmit(getSubmittedForm(event.currentTarget));
         }}
       >
-        <div className="row">
-          <div className="col-12">
+        <Row>
+          <Column>
             <AuthInputField
               id="email"
               label="Email"
@@ -98,8 +102,8 @@ export function Login({
               required
               wrapperClassName="input-group-meta mb-30"
             />
-          </div>
-          <div className="col-12">
+          </Column>
+          <Column>
             <AuthPasswordField
               id="password"
               label="Password"
@@ -111,24 +115,19 @@ export function Login({
               }}
               required
             />
-          </div>
-          <div className="col-12">
-            <div className="agreement-checkbox d-flex justify-content-between align-items-center">
-              <div>
-                <input
-                  type="checkbox"
-                  id="remember"
-                  name="rememberMe"
-                  checked={form.rememberMe}
-                  onChange={(event) => {
-                    updateField("rememberMe", event.currentTarget.checked);
-                  }}
-                />
-                <label htmlFor="remember">Keep me logged in</label>
-              </div>
-            </div>
-          </div>
-          <div className="col-12">
+          </Column>
+          <Column>
+            <CheckboxField
+              id="remember"
+              name="rememberMe"
+              label="Keep me logged in"
+              checked={form.rememberMe}
+              onChange={(event) => {
+                updateField("rememberMe", event.currentTarget.checked);
+              }}
+            />
+          </Column>
+          <Column>
             <Button
               type="button"
               tone="form"
@@ -141,8 +140,8 @@ export function Login({
             >
               {isSubmitting ? "Signing in..." : "Login"}
             </Button>
-          </div>
-          <div className="col-12">
+          </Column>
+          <Column>
             <Button
               type="button"
               tone="form"
@@ -154,9 +153,9 @@ export function Login({
             >
               Continue with Google
             </Button>
-          </div>
-        </div>
-      </form>
+          </Column>
+        </Row>
+      </Form>
     </AuthPageShell>
   );
 }

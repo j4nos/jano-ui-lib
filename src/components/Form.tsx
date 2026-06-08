@@ -1,6 +1,11 @@
 import { Fragment, type ComponentPropsWithoutRef, type ReactElement } from "react";
 import { Button } from "./Button";
+import { Column } from "./Column";
 import { FormSubmitButton } from "./FormSubmitButton";
+import { Row } from "./Row";
+import { AuthInputField } from "./auth/AuthInputField";
+import { AuthPasswordField } from "./auth/AuthPasswordField";
+import { CheckboxField } from "./forms/CheckboxField";
 import { FileInputField } from "./forms/FileInputField";
 import { ImageUploadField } from "./forms/ImageUploadField";
 import { RadioGroupField } from "./forms/RadioGroupField";
@@ -15,6 +20,11 @@ export type FormChild =
   | ReactElement<unknown, typeof FileInputField>
   | ReactElement<unknown, typeof RadioGroupField>
   | ReactElement<unknown, typeof ImageUploadField>
+  | ReactElement<unknown, typeof CheckboxField>
+  | ReactElement<unknown, typeof AuthInputField>
+  | ReactElement<unknown, typeof AuthPasswordField>
+  | ReactElement<unknown, typeof Row>
+  | ReactElement<unknown, typeof Column>
   | ReactElement<unknown, typeof FormSubmitButton>
   | ReactElement<unknown, typeof Button>;
 
