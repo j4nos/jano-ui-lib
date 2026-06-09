@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { BrandWordmark } from "../BrandWordmark";
+import { Button } from "../Button";
 import { ToastIndicator } from "../ToastIndicator";
 import type { BrandWordmarkProps } from "../BrandWordmark";
 
@@ -141,12 +142,9 @@ export function Header({
 
             <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center gap-3 order-lg-3">
               {contactHref ? (
-                <Link
-                  href={contactHref}
-                  className={`fw-500 tran3s ${isLightTone ? "text-white" : "tx-dark"}`}
-                >
+                <Button href={contactHref} tone="pill" withTopMargin={false}>
                   {contactLabel}
-                </Link>
+                </Button>
               ) : null}
               {isAuthenticated && userDisplayName ? (
                 <span
