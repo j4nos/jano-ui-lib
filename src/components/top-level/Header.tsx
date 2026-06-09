@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { BrandWordmark } from "../BrandWordmark";
-import { Button } from "../Button";
 import { ToastIndicator } from "../ToastIndicator";
 import type { BrandWordmarkProps } from "../BrandWordmark";
 
@@ -14,6 +13,8 @@ export type HeaderMenuItem = {
   suffix?: string;
   exact?: boolean;
   action?: "logout";
+  /** Keep this item in the Access menu even when the user is authenticated. */
+  persist?: boolean;
 };
 
 export type HeaderMenuGroup = {
@@ -38,9 +39,6 @@ type HeaderProps = {
   isAdmin?: boolean;
   userDisplayName?: string;
   onLogout?: () => void | Promise<void>;
-  /** When set, a Contact link is shown in the navbar right widget. */
-  contactHref?: string;
-  contactLabel?: string;
 };
 
 function resolveMenuBaseHref(pathname: string, menuBasePath: string) {
@@ -92,8 +90,6 @@ export function Header({
   isAdmin = false,
   userDisplayName = "",
   onLogout,
-  contactHref,
-  contactLabel = "Contact Us",
 }: HeaderProps) {
   const pathname = usePathname();
   const isLightTone = tone === "light";
@@ -119,7 +115,10 @@ export function Header({
         ? {
             ...group,
             items: isAuthenticated
-              ? [{ label: "Logout", action: "logout" as const }]
+              ? [
+                  ...group.items.filter((item) => item.persist),
+                  { label: "Logout", action: "logout" as const },
+                ]
               : group.items,
           }
         : group,
@@ -140,12 +139,7 @@ export function Header({
               <BrandWordmark {...brand} href={brandHref} />
             </div>
 
-            <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center gap-3 order-lg-3">
-              {contactHref ? (
-                <Button href={contactHref} tone="pill" withTopMargin={false}>
-                  {contactLabel}
-                </Button>
-              ) : null}
+            <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center order-lg-3">
               {isAuthenticated && userDisplayName ? (
                 <span
                   className={`fw-500 ${isLightTone ? "text-white" : "tx-dark"}`}
