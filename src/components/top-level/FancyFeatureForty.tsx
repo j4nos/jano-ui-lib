@@ -1,7 +1,17 @@
+import { Container } from "../Container";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { CategoryCard, MoreCategoryCard } from "../CategoryCard";
+
 type CategoryItem = {
   title: string;
   subtitle: string;
   href?: string;
+  /**
+   * Icon image `src` for this card. When omitted, falls back to the original
+   * per-index default (`jano/images/icon/icon_127.svg` ... `icon_133.svg`).
+   */
+  icon?: string;
 };
 
 type MoreCategory = {
@@ -24,6 +34,17 @@ type Props = {
   ];
   moreCategory?: MoreCategory;
 };
+
+/** Per-index icon defaults preserving the original hardcoded markup. */
+const DEFAULT_ICONS = [
+  "jano/images/icon/icon_127.svg",
+  "jano/images/icon/icon_128.svg",
+  "jano/images/icon/icon_129.svg",
+  "jano/images/icon/icon_130.svg",
+  "jano/images/icon/icon_131.svg",
+  "jano/images/icon/icon_132.svg",
+  "jano/images/icon/icon_133.svg",
+];
 
 export default function FancyFeatureForty({
   sectionLabel = "OUR CORUSES",
@@ -51,157 +72,35 @@ export default function FancyFeatureForty({
         </div>
       </div>
       <div className="bg-wrapper m-auto">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[0].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
-              >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_127.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
+        <Container>
+          <Row>
+            {[
+              ...categories.map((category, index) => (
+                <Column
+                  key={`${category.title}-${index}`}
+                  className="col-lg-3 col-md-4 col-sm-6 d-flex"
+                >
+                  <CategoryCard
+                    title={category.title}
+                    subtitle={category.subtitle}
+                    href={category.href ?? "#"}
+                    icon={category.icon ?? DEFAULT_ICONS[index]}
                   />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[0].title}
-                </h4>
-                <p>{categories[0].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[1].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
+                </Column>
+              )),
+              <Column
+                key="more-category"
+                className="col-lg-3 col-md-4 col-sm-6 d-flex"
               >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_128.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
-                  />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[1].title}
-                </h4>
-                <p>{categories[1].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[2].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
-              >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_129.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
-                  />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[2].title}
-                </h4>
-                <p>{categories[2].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[3].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
-              >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_130.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
-                  />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[3].title}
-                </h4>
-                <p>{categories[3].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[4].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
-              >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_131.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
-                  />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[4].title}
-                </h4>
-                <p>{categories[4].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[5].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
-              >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_132.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
-                  />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[5].title}
-                </h4>
-                <p>{categories[5].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={categories[6].href ?? "#"}
-                className="card-style-eighteen text-center tran3s mb-40 xs-mb-20"
-              >
-                <div className="icon d-flex align-items-end justify-content-center">
-                  <img
-                    src="jano/images/icon/icon_133.svg"
-                    alt=""
-                    className="lazy-img"
-                    style={{}}
-                  />
-                </div>
-                <h4 className="tx-dark mt-45 lg-mt-30">
-                  {categories[6].title}
-                </h4>
-                <p>{categories[6].subtitle}</p>
-              </a>{" "}
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6 d-flex">
-              <a
-                href={moreCategory.href ?? "#"}
-                className="card-style-eighteen more-item position-relative text-center tran3s mb-40"
-              >
-                <h3>{moreCategory.value}</h3>
-                <p className="pb-20">{moreCategory.label}</p>
-                <img
-                  src="jano/images/icon/icon_134.svg"
-                  alt=""
-                  className="m-auto"
+                <MoreCategoryCard
+                  value={moreCategory.value}
+                  label={moreCategory.label}
+                  href={moreCategory.href ?? "#"}
                 />
-              </a>{" "}
-            </div>
-          </div>
-        </div>
+              </Column>,
+            ]}
+          </Row>
+        </Container>
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { TitleStyleTen } from "../TitleStyleTen";
+
 export type FeedbackSectionTenItem = {
   company: string;
   role?: string;
@@ -42,23 +46,15 @@ export default function FeedbackSectionTen({
     >
       <div className="container">
         <div className="position-relative">
-          <div className="row">
-            <div className="col-lg-5">
-              <div className="title-style-ten text-center text-lg-start">
-                {sectionLabel ? (
-                  <div className="sc-title">{sectionLabel}</div>
-                ) : null}
-                <h2 className="main-title font-recoleta fw-normal tx-dark">
-                  {title.prefix}{" "}
-                  <span className="position-relative">
-                    {title.highlight} <img src={highlightShapeSrc} alt="" />
-                  </span>{" "}
-                  {title.suffix}
-                </h2>
-              </div>{" "}
-              {/* /.title-style-ten */}
-            </div>
-          </div>
+          <Row>
+            <Column className="col-lg-5">
+              <TitleStyleTen
+                sectionLabel={sectionLabel}
+                title={title}
+                highlightShapeSrc={highlightShapeSrc}
+              />
+            </Column>
+          </Row>
           <div className="slider-wrapper pt-70 lg-pt-40">
             <div className="feedback_slider_ten">
               {items.map((item, index) => {

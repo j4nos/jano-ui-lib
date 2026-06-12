@@ -1,3 +1,10 @@
+import { Container } from "../Container";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { HeroBannerNineContent } from "../HeroBannerNineContent";
+import { HeroBannerNineGalleryLeft } from "../HeroBannerNineGalleryLeft";
+import { HeroBannerNineGalleryRight } from "../HeroBannerNineGalleryRight";
+
 export type HeroBannerNineProps = {
   title: {
     prefix: string;
@@ -46,74 +53,40 @@ export default function HeroBannerNine({
 }: HeroBannerNineProps) {
   return (
     <div className="hero-banner-nine position-relative zn2 pt-225 md-pt-150">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-md-6">
-            <h1 className="hero-heading fw-normal text-white font-recoleta">
-              {title.prefix}{" "}
-              <span className="position-relative">
-                {title.highlight}
-                <img src={highlightShapeSrc} alt="" />
-              </span>{" "}
-              {title.suffix}
-            </h1>
-            <p className="sub-text mt-20 mb-45 lg-mb-30">{description}</p>
-            <div className="d-lg-flex align-items-center">
-              <a
-                href={ctaHref}
-                className="demo-btn fw-500 tran3s d-inline-flex align-items-center mb-25 me-4"
-              >
-                <span>{ctaLabel}</span>{" "}
-                <img src={ctaIconSrc} alt="" className="ms-3" />
-              </a>
-              <div className="mb-25 text-white signIn-btn">
-                {signInPrefix} <a href={signInHref}>{signInLinkLabel}</a>
-              </div>
-            </div>
-            <h2 className="fw-normal text-white mt-60 mb-5 lg-mt-40">
-              {ratingTitle}{" "}
-            </h2>
-            <p className="fs-18 opacity-50 text-white">{ratingText}</p>
-          </div>
-        </div>
-      </div>{" "}
+      <Container>
+        <Row>
+          <Column className="col-lg-6 col-md-6">
+            <HeroBannerNineContent
+              title={title}
+              description={description}
+              ctaLabel={ctaLabel}
+              ctaHref={ctaHref}
+              signInPrefix={signInPrefix}
+              signInLinkLabel={signInLinkLabel}
+              signInHref={signInHref}
+              ratingTitle={ratingTitle}
+              ratingText={ratingText}
+              highlightShapeSrc={highlightShapeSrc}
+              ctaIconSrc={ctaIconSrc}
+            />
+          </Column>
+        </Row>
+      </Container>{" "}
       {/* /.container */}
       <div className="image-gallery">
-        <div className="row align-items-center">
-          <div className="col-6">
-            <div className="img-box position-relative mt-35 img-box-one">
-              <img src={galleryImageOneSrc} alt="" className="main-img" />
-              <img
-                src="/images/shape/shape_115.svg"
-                alt=""
-                className="shapes shape-one"
-              />
-            </div>
-            <div className="img-box position-relative mt-35 img-box-two">
-              <img src={galleryImageTwoSrc} alt="" className="main-img" />
-              <img
-                src="/images/shape/shape_118.svg"
-                alt=""
-                className="shapes shape-four"
-              />
-            </div>
-          </div>
-          <div className="col-6">
-            <div className="img-box position-relative mt-35 img-box-three">
-              <img src={galleryImageThreeSrc} alt="" className="main-img" />
-              <img
-                src="/images/shape/shape_116.svg"
-                alt=""
-                className="shapes shape-two"
-              />
-              <img
-                src="/images/shape/shape_117.svg"
-                alt=""
-                className="shapes shape-three"
-              />
-            </div>
-          </div>
-        </div>
+        <Row className="align-items-center">
+          <Column className="col-6">
+            <HeroBannerNineGalleryLeft
+              galleryImageOneSrc={galleryImageOneSrc}
+              galleryImageTwoSrc={galleryImageTwoSrc}
+            />
+          </Column>
+          <Column className="col-6">
+            <HeroBannerNineGalleryRight
+              galleryImageThreeSrc={galleryImageThreeSrc}
+            />
+          </Column>
+        </Row>
       </div>{" "}
       {/* /.image-gallery */}
       {partners && partners.length > 0 ? (

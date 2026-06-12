@@ -1,6 +1,13 @@
+import { Container } from "../Container";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { FeatureCard } from "../FeatureCard";
+
 type FeatureItem = {
   title: string;
   description: string;
+  /** Icon image shown inside the rounded circle. */
+  icon?: string;
 };
 
 type Props = {
@@ -9,68 +16,38 @@ type Props = {
 
 export default function FancyFeatureThirtyNine({
   items = [
-    { title: "Learn skills over 120k+", description: "Video courses." },
-    { title: "Choose courses taught", description: "Real-world experts." },
+    {
+      title: "Learn skills over 120k+",
+      description: "Video courses.",
+      icon: "jano/images/icon/icon_124.svg",
+    },
+    {
+      title: "Choose courses taught",
+      description: "Real-world experts.",
+      icon: "jano/images/icon/icon_125.svg",
+    },
     {
       title: "Learn lifetime access on",
       description: "Mobile and desktop.",
+      icon: "jano/images/icon/icon_126.svg",
     },
   ],
 }: Props) {
   return (
     <div className="fancy-feature-thirtyNine position-relative zn2 pt-90 pb-50 lg-pt-50 lg-pb-10">
-      <div className="container">
-        <div className="row gx-xxl-5">
-          <div className="col-lg-4 col-md-6">
-            <div className="card-style-seventeen d-flex align-items-center mb-40">
-              <div className="icon rounded-circle d-flex align-items-center justify-content-center">
-                <img
-                  src="jano/images/icon/icon_124.svg"
-                  alt=""
-                  className="lazy-img"
-                  style={{}}
-                />
-              </div>
-              <div className="ps-4 text-wrapper">
-                <h4 className="text-white m0">{items[0].title}</h4>
-                <p className="m0">{items[0].description}</p>
-              </div>
-            </div>{" "}
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="card-style-seventeen d-flex align-items-center mb-40">
-              <div className="icon rounded-circle d-flex align-items-center justify-content-center">
-                <img
-                  src="jano/images/icon/icon_125.svg"
-                  alt=""
-                  className="lazy-img"
-                  style={{}}
-                />
-              </div>
-              <div className="ps-4 text-wrapper">
-                <h4 className="text-white m0">{items[1].title}</h4>
-                <p className="m0">{items[1].description}</p>
-              </div>
-            </div>{" "}
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="card-style-seventeen d-flex align-items-center mb-40">
-              <div className="icon rounded-circle d-flex align-items-center justify-content-center">
-                <img
-                  src="jano/images/icon/icon_126.svg"
-                  alt=""
-                  className="lazy-img"
-                  style={{}}
-                />
-              </div>
-              <div className="ps-4 text-wrapper">
-                <h4 className="text-white m0">{items[2].title}</h4>
-                <p className="m0">{items[2].description}</p>
-              </div>
-            </div>{" "}
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Row className="gx-xxl-5">
+          {items.map((item, index) => (
+            <Column key={index} className="col-lg-4 col-md-6">
+              <FeatureCard
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
+            </Column>
+          ))}
+        </Row>
+      </Container>
       <img
         src="jano/images/shape/shape_148.svg"
         alt=""

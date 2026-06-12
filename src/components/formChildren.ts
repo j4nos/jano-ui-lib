@@ -1,11 +1,24 @@
 import type { Fragment, ReactElement } from "react";
 import type { Button } from "./Button";
+import type { CategoryCard, MoreCategoryCard } from "./CategoryCard";
 import type { Column } from "./Column";
+import type { FancyFeatureThirtyOneCard } from "./FancyFeatureThirtyOneCard";
+import type { FancyFeatureThirtyOneTitle } from "./FancyFeatureThirtyOneTitle";
+import type { FeatureCard } from "./FeatureCard";
+import type { FooterCopyright } from "./FooterCopyright";
+import type { FooterLegalLinks } from "./FooterLegalLinks";
+import type { FooterSocialLinks } from "./FooterSocialLinks";
 import type { FormSubmitButton } from "./FormSubmitButton";
+import type { GoalCard } from "./GoalCard";
+import type { HeroBannerNineContent } from "./HeroBannerNineContent";
+import type { HeroBannerNineGalleryLeft } from "./HeroBannerNineGalleryLeft";
+import type { HeroBannerNineGalleryRight } from "./HeroBannerNineGalleryRight";
 import type { PortfolioDetailsSidebar } from "./PortfolioDetailsSidebar";
 import type { PortfolioGalleryCarousel } from "./PortfolioGalleryCarousel";
+import type { PricingPlanCard } from "./PricingPlanCard";
 import type { Row } from "./Row";
 import type { TitleStyleFive } from "./TitleStyleFive";
+import type { TitleStyleTen } from "./TitleStyleTen";
 import type { AuthInputField } from "./auth/AuthInputField";
 import type { AuthPasswordField } from "./auth/AuthPasswordField";
 import type { CheckboxField } from "./forms/CheckboxField";
@@ -32,7 +45,21 @@ export type FormChild =
   | ReactElement<unknown, typeof Button>
   | ReactElement<unknown, typeof TitleStyleFive>
   | ReactElement<unknown, typeof PortfolioGalleryCarousel>
-  | ReactElement<unknown, typeof PortfolioDetailsSidebar>;
+  | ReactElement<unknown, typeof PortfolioDetailsSidebar>
+  | ReactElement<unknown, typeof FeatureCard>
+  | ReactElement<unknown, typeof CategoryCard>
+  | ReactElement<unknown, typeof MoreCategoryCard>
+  | ReactElement<unknown, typeof GoalCard>
+  | ReactElement<unknown, typeof PricingPlanCard>
+  | ReactElement<unknown, typeof FancyFeatureThirtyOneTitle>
+  | ReactElement<unknown, typeof FancyFeatureThirtyOneCard>
+  | ReactElement<unknown, typeof TitleStyleTen>
+  | ReactElement<unknown, typeof HeroBannerNineContent>
+  | ReactElement<unknown, typeof HeroBannerNineGalleryLeft>
+  | ReactElement<unknown, typeof HeroBannerNineGalleryRight>
+  | ReactElement<unknown, typeof FooterLegalLinks>
+  | ReactElement<unknown, typeof FooterSocialLinks>
+  | ReactElement<unknown, typeof FooterCopyright>;
 
 export type FormChildren =
   | FormChild

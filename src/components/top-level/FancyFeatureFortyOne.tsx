@@ -1,15 +1,12 @@
 import FancyFeatureFortyOneAccordion, {
   type FancyFeatureFortyOneAccordionItem,
 } from "../FancyFeatureFortyOneAccordion";
+import { GoalCard, type GoalCardProps } from "../GoalCard";
+import { Container } from "../Container";
+import { Row } from "../Row";
+import { Column } from "../Column";
 
-type GoalCard = {
-  tier: string;
-  title: string;
-  level: string;
-  classes: string;
-  badge: string;
-  href?: string;
-};
+type GoalCard = GoalCardProps;
 
 type Props = {
   sectionLabel?: string;
@@ -102,85 +99,29 @@ export default function FancyFeatureFortyOne({
             style={{ visibility: "visible", animationName: "fadeInRight" }}
           >
             <div className="wrapper position-relative ps-sm-3 pe-sm-3 ps-xl-5 pe-xl-5 md-mt-70">
-              <div className="row">
-                <div className="col-sm-6 d-flex flex-column space-fix">
-                  <a
-                    href={cards[0].href ?? "#"}
-                    className="card-style-nineteen position-relative d-flex flex-column tran3s mb-40 xs-mb-20"
-                  >
-                    <span className="tag fw-500 text-white text-uppercase">
-                      {cards[0].tier}
-                    </span>
-                    <h4 className="mb-0 mt-25">{cards[0].title}</h4>
-                    <ul className="style-none pb-40 lg-pb-20 d-flex justify-content-between">
-                      <li>{cards[0].level}</li>
-                      <li>{cards[0].classes}</li>
-                    </ul>
-                    <span className="tag2 fw-bold tx-dark text-uppercase mt-auto">
-                      {cards[0].badge}
-                    </span>
-                  </a>{" "}
-                  <a
-                    href={cards[1].href ?? "#"}
-                    className="card-style-nineteen position-relative d-flex flex-column tran3s mb-40 xs-mb-20"
-                  >
-                    <span className="tag fw-500 text-white text-uppercase">
-                      {cards[1].tier}
-                    </span>
-                    <h4 className="mb-0 mt-25">
-                      {cards[1].title.includes(" & ") ? (
-                        <>
-                          {cards[1].title.split(" & ")[0]} &amp; <br />{" "}
-                          {cards[1].title.split(" & ")[1]}
-                        </>
-                      ) : (
-                        cards[1].title
-                      )}
-                    </h4>
-                    <ul className="style-none pb-40 lg-pb-20 d-flex justify-content-between">
-                      <li>{cards[1].level}</li>
-                      <li>{cards[1].classes}</li>
-                    </ul>
-                    <span className="tag2 fw-bold tx-dark text-uppercase mt-auto">
-                      {cards[1].badge}
-                    </span>
-                  </a>{" "}
-                </div>
-                <div className="col-sm-6 d-flex flex-column">
-                  <a
-                    href={cards[2].href ?? "#"}
-                    className="card-style-nineteen position-relative d-flex flex-column tran3s mb-40 xs-mb-20"
-                  >
-                    <span className="tag fw-500 text-white text-uppercase">
-                      {cards[2].tier}
-                    </span>
-                    <h4 className="mb-0 mt-25">{cards[2].title}</h4>
-                    <ul className="style-none pb-40 lg-pb-20 d-flex justify-content-between">
-                      <li>{cards[2].level}</li>
-                      <li>{cards[2].classes}</li>
-                    </ul>
-                    <span className="tag2 fw-bold tx-dark text-uppercase mt-auto">
-                      {cards[2].badge}
-                    </span>
-                  </a>{" "}
-                  <a
-                    href={cards[3].href ?? "#"}
-                    className="card-style-nineteen position-relative d-flex flex-column tran3s mb-40 xs-mb-20"
-                  >
-                    <span className="tag fw-500 text-white text-uppercase">
-                      {cards[3].tier}
-                    </span>
-                    <h4 className="mb-0 mt-25">{cards[3].title}</h4>
-                    <ul className="style-none pb-40 lg-pb-20 d-flex justify-content-between">
-                      <li>{cards[3].level}</li>
-                      <li>{cards[3].classes}</li>
-                    </ul>
-                    <span className="tag2 fw-bold tx-dark text-uppercase mt-auto">
-                      {cards[3].badge}
-                    </span>
-                  </a>{" "}
-                </div>
-              </div>
+              <Container>
+                <Row>
+                  {cards.map((card, index) => (
+                    <Column
+                      key={`${card.title}-${index}`}
+                      className={
+                        index % 2 === 0
+                          ? "col-sm-6 d-flex flex-column space-fix"
+                          : "col-sm-6 d-flex flex-column"
+                      }
+                    >
+                      <GoalCard
+                        tier={card.tier}
+                        title={card.title}
+                        level={card.level}
+                        classes={card.classes}
+                        badge={card.badge}
+                        href={card.href}
+                      />
+                    </Column>
+                  ))}
+                </Row>
+              </Container>
               <img
                 src="jano/images/shape/shape_152.svg"
                 alt=""

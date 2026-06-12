@@ -1,16 +1,21 @@
-type PriceSectionThreePlan = {
-  iconSrc: string;
-  iconAlt?: string;
-  columnClassName?: string;
-  planClassName?: string;
-  planName: string;
-  bodyClassName?: string;
-  features: string[];
-  price: string;
-  trialText: string;
-  ctaLabel: string;
-  ctaHref?: string;
-};
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { PricingPlanCard, type PricingPlanCardProps } from "../PricingPlanCard";
+
+type PriceSectionThreePlan = Pick<
+  PricingPlanCardProps,
+  | "iconSrc"
+  | "iconAlt"
+  | "columnClassName"
+  | "planClassName"
+  | "planName"
+  | "bodyClassName"
+  | "features"
+  | "price"
+  | "trialText"
+  | "ctaLabel"
+  | "ctaHref"
+>;
 
 type PriceSectionThreeTab = {
   id: string;
@@ -71,40 +76,19 @@ export function PriceSectionThree({
                   className={`tab-pane${tab.active ? " show active" : ""}`}
                   id={tab.id}
                 >
-                  <div className="row gx-0 align-items-center">
+                  <Row className="gx-0 align-items-center">
                     {tab.plans.map((plan) => (
-                      <div className={columnClassName} key={`${tab.id}-${plan.planName}`}>
-                        <div
-                          className={`pr-column${plan.columnClassName ? ` ${plan.columnClassName}` : ""}`}
-                        >
-                          <img src={plan.iconSrc} alt={plan.iconAlt ?? ""} className="icon" />
-                          <div
-                            className={`plan tx-dark${plan.planClassName ? ` ${plan.planClassName}` : ""}`}
-                          >
-                            {plan.planName}
-                          </div>
-                          <div
-                            className={`pr-body${plan.bodyClassName ? ` ${plan.bodyClassName}` : ""}`}
-                          >
-                            <ul className="style-none text-start">
-                              {plan.features.map((feature, index) => (
-                                <li key={`${tab.id}-${plan.planName}-${index}`}>{feature}</li>
-                              ))}
-                            </ul>
-                          </div>
-                          <div className="pr-footer pt-45 lg-pt-30">
-                            <div className="price tx-dark">{plan.price}</div>
-                            <div className="trial-text fs-17 opacity-75 mb-30">
-                              {plan.trialText}
-                            </div>
-                            <a href={plan.ctaHref ?? "#"} className="btn-twelve fw-500 tran3s">
-                              {plan.ctaLabel}
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                      <Column
+                        className={columnClassName}
+                        key={`${tab.id}-${plan.planName}`}
+                      >
+                        <PricingPlanCard
+                          {...plan}
+                          featureKeyPrefix={`${tab.id}-${plan.planName}`}
+                        />
+                      </Column>
                     ))}
-                  </div>
+                  </Row>
                 </div>
               );
             })}

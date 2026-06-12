@@ -1,5 +1,12 @@
 import type { ReactNode } from "react";
-import { FormSubmitButton } from "../FormSubmitButton";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { FooterBrandIntro } from "../FooterBrandIntro";
+import { FooterLinkColumn } from "../FooterLinkColumn";
+import { FooterNewsletter } from "../FooterNewsletter";
+import { FooterLegalLinks } from "../FooterLegalLinks";
+import { FooterSocialLinks } from "../FooterSocialLinks";
+import { FooterCopyright } from "../FooterCopyright";
 
 export type JanoFooterLink = {
   label: string;
@@ -53,93 +60,46 @@ export function JanoFooter({
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-xl-2 footer-intro mb-40">
-            <div className="logo">{brand}</div>
+            <FooterBrandIntro brand={brand} />
           </div>
           {columns.map((column) => (
             <div className={column.className} key={column.title}>
-              <h5 className="footer-title tx-dark fw-normal">{column.title}</h5>
-              <ul className="footer-nav-link style-none">
-                {column.links.map((link) => (
-                  <li key={`${column.title}-${link.label}`}>
-                    <a href={link.href} className={link.className}>
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <FooterLinkColumn title={column.title} links={column.links} />
             </div>
           ))}
           <div
             className="col-xl-4 col-lg-5 mb-30 ps-xxl-5 form-widget"
             id="newsletter"
           >
-            <h5 className="footer-title tx-dark fw-normal">{newsletterTitle}</h5>
-            <h6 className="pt-15 pb-20 md-pt-10">{newsletterSubtitle}</h6>
-            <form action={newsletterAction} className="position-relative">
-              <input
-                type="email"
-                placeholder={newsletterPlaceholder}
-                name="email"
-                required
-              />
-              <FormSubmitButton
-                variant="bare"
-                withTopMargin={false}
-                className="position-absolute"
-              >
-                {newsletterSubmitLabel}
-              </FormSubmitButton>
-            </form>
-            {newsletterMessage ? (
-              <div
-                className={`fs-14 mt-10 ${newsletterError ? "tx-dark" : "opacity-75"}`}
-              >
-                {newsletterMessage}
-              </div>
-            ) : null}
-            <div className="fs-14 mt-10 opacity-75">{newsletterHelperText}</div>
-            {paymentStripSrc ? (
-              <div className="mt-25">
-                <img
-                  src={paymentStripSrc}
-                  alt={paymentStripAlt}
-                  style={{ maxWidth: "100%", height: "auto" }}
-                />
-              </div>
-            ) : null}
+            <FooterNewsletter
+              newsletterTitle={newsletterTitle}
+              newsletterSubtitle={newsletterSubtitle}
+              newsletterPlaceholder={newsletterPlaceholder}
+              newsletterSubmitLabel={newsletterSubmitLabel}
+              newsletterHelperText={newsletterHelperText}
+              paymentStripSrc={paymentStripSrc}
+              paymentStripAlt={paymentStripAlt}
+              newsletterAction={newsletterAction}
+              newsletterMessage={newsletterMessage}
+              newsletterError={newsletterError}
+            />
           </div>
         </div>
       </div>
 
       <div className="container">
         <div className="bottom-footer">
-          <div className="row">
-            <div className="col-lg-4 order-lg-0 mt-15">
-              <ul className="d-flex justify-content-center justify-content-lg-start footer-nav style-none">
-                {legalLinks.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} className={link.className}>
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="col-lg-4 order-lg-2 mt-15">
-              <ul className="d-flex justify-content-center justify-content-lg-end social-icon style-none">
-                {socialLinks.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} aria-label={link.label}>
-                      {link.className ? <i className={link.className} /> : link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="col-lg-4 order-lg-1 mt-15">
-              <p className="copyright text-center m0">{copyrightText}</p>
-            </div>
-          </div>
+          <Row>
+            <Column className="col-lg-4 order-lg-0 mt-15">
+              <FooterLegalLinks legalLinks={legalLinks} />
+            </Column>
+            <Column className="col-lg-4 order-lg-2 mt-15">
+              <FooterSocialLinks socialLinks={socialLinks} />
+            </Column>
+            <Column className="col-lg-4 order-lg-1 mt-15">
+              <FooterCopyright copyrightText={copyrightText} />
+            </Column>
+          </Row>
         </div>
       </div>
       <img
