@@ -2,7 +2,10 @@ import type { Fragment, ReactElement } from "react";
 import type { Button } from "./Button";
 import type { Column } from "./Column";
 import type { FormSubmitButton } from "./FormSubmitButton";
+import type { PortfolioDetailsSidebar } from "./PortfolioDetailsSidebar";
+import type { PortfolioGalleryCarousel } from "./PortfolioGalleryCarousel";
 import type { Row } from "./Row";
+import type { TitleStyleFive } from "./TitleStyleFive";
 import type { AuthInputField } from "./auth/AuthInputField";
 import type { AuthPasswordField } from "./auth/AuthPasswordField";
 import type { CheckboxField } from "./forms/CheckboxField";
@@ -26,7 +29,10 @@ export type FormChild =
   | ReactElement<unknown, typeof Row>
   | ReactElement<unknown, typeof Column>
   | ReactElement<unknown, typeof FormSubmitButton>
-  | ReactElement<unknown, typeof Button>;
+  | ReactElement<unknown, typeof Button>
+  | ReactElement<unknown, typeof TitleStyleFive>
+  | ReactElement<unknown, typeof PortfolioGalleryCarousel>
+  | ReactElement<unknown, typeof PortfolioDetailsSidebar>;
 
 export type FormChildren =
   | FormChild

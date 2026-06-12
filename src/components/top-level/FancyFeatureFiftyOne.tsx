@@ -1,4 +1,8 @@
 import type { ReactNode } from "react";
+import { Container } from "../Container";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { TitleStyleFive } from "../TitleStyleFive";
 
 export type FancyFeatureFiftyOneShape = {
   /** Final shape image (data-src for lazy loading). */
@@ -39,22 +43,13 @@ export function FancyFeatureFiftyOne({
 
   return (
     <div className={rootClassName}>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-7 wow fadeInLeft">
-            <div className="title-style-five mb-65 lg-mb-40">
-              {subtitle != null && (
-                <div className="sc-title-two fst-italic position-relative">
-                  {subtitle}
-                </div>
-              )}
-              {title != null && (
-                <h2 className="main-title fw-500 tx-dark">{title}</h2>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <Column className="col-lg-7 wow fadeInLeft">
+            <TitleStyleFive subtitle={subtitle} title={title} />
+          </Column>
+        </Row>
+      </Container>
       {shape && (
         <img
           src={shape.lazySrc ?? shape.src}

@@ -16,4 +16,5 @@ export { default as HeroBannerTwelve } from "./HeroBannerTwelve";
 export * from "./JanoFooter";
 export * from "./PagePaginationOne";
 export * from "./PortfolioDetailsTwo";
+export * from "./ProjectPaginationOne";
 export * from "./PriceSectionThree";

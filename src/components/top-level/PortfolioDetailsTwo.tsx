@@ -1,22 +1,25 @@
 import type { ReactNode } from "react";
+import { Container } from "../Container";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import {
+  PortfolioGalleryCarousel,
+  type PortfolioGalleryImage,
+} from "../PortfolioGalleryCarousel";
+import {
+  PortfolioDetailsSidebar,
+  type PortfolioDetailsSidebarMeta,
+} from "../PortfolioDetailsSidebar";
+import {
+  ProjectPaginationOne,
+  type ProjectPaginationOneLink,
+} from "./ProjectPaginationOne";
 
-export type PortfolioDetailsTwoImage = {
-  src: string;
-  alt?: string;
-};
+export type PortfolioDetailsTwoImage = PortfolioGalleryImage;
+export type PortfolioDetailsTwoMeta = PortfolioDetailsSidebarMeta;
 
-export type PortfolioDetailsTwoMeta = {
-  label: ReactNode;
-  value: ReactNode;
-};
-
-export type PortfolioDetailsTwoNavLink = {
-  /** Direction label, e.g. "Previous" / "Next". */
-  direction?: ReactNode;
-  /** Project name shown under the direction label. */
-  name?: ReactNode;
-  href?: string;
-};
+/** @deprecated Use `ProjectPaginationOneLink` from `./ProjectPaginationOne`. */
+export type PortfolioDetailsTwoNavLink = ProjectPaginationOneLink;
 
 type PortfolioDetailsTwoProps = {
   /** Gallery slides. The first one is rendered as the active slide. */
@@ -84,115 +87,25 @@ export function PortfolioDetailsTwo({
   return (
     <div className={rootClassName}>
       <div className="project-desctiption">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 wow fadeInLeft">
-              <div
-                id={carouselId}
-                className="carousel slide me-xxl-5 md-mb-40"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  {images.map((image, index) => (
-                    <div
-                      key={index}
-                      className={`carousel-item${index === 0 ? " active" : ""}`}
-                    >
-                      <img
-                        src={image.src}
-                        className="d-block w-100"
-                        alt={image.alt ?? "..."}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target={`#${carouselId}`}
-                  data-bs-slide="prev"
-                >
-                  <i className="bi bi-chevron-left" />
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target={`#${carouselId}`}
-                  data-bs-slide="next"
-                >
-                  <i className="bi bi-chevron-right" />
-                  <span className="visually-hidden">Next</span>
-                </button>
-              </div>
-            </div>
-            <div className="col-lg-4 wow fadeInRight">
-              <div className="sidebar ms-xl-5">
-                {aboutTitle != null && <h3 className="mb-20">{aboutTitle}</h3>}
-                {about != null && (
-                  <p className="border-bottom pb-40 mb-35 lg-pb-20">{about}</p>
-                )}
-                <div className="row">
-                  {meta.map((item, index) => (
-                    <div key={index} className="col-12 mb-35">
-                      <div className="pt-title fw-bold tx-dark text-uppercase">
-                        {item.label}
-                      </div>
-                      <div className="pt-text">{item.value}</div>
-                    </div>
-                  ))}
-                </div>
-                {showDots && dotCount > 0 && (
-                  <ul className="style-none circle-shape d-flex pt-10">
-                    {Array.from({ length: dotCount }).map((_, index) => (
-                      <li key={index} className="rounded-circle" />
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </div>
-          {showPagination && (previous || next) && (
-            <div className="pr-pagination-one mt-110 lg-mt-80">
-              <ul className="style-none d-flex justify-content-between">
-                {previous && (
-                  <li>
-                    <a href={previous.href ?? "#"} className="wow fadeInLeft">
-                      <span className="d-flex align-items-center align-items-md-end">
-                        <i className="bi bi-arrow-left" />
-                        <span className="ms-3">
-                          <span className="pr-dir text-uppercase d-block">
-                            {previous.direction ?? "Previous"}
-                          </span>
-                          <span className="pr-name d-none d-md-block tran3s fw-500 tx-dark">
-                            {previous.name}
-                          </span>
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                )}
-                {next && (
-                  <li>
-                    <a href={next.href ?? "#"} className="wow fadeInRight">
-                      <span className="d-flex align-items-center align-items-md-end">
-                        <span className="me-3">
-                          <span className="pr-dir text-uppercase d-block">
-                            {next.direction ?? "Next"}
-                          </span>
-                          <span className="pr-name d-none d-md-block tran3s fw-500 tx-dark">
-                            {next.name}
-                          </span>
-                        </span>
-                        <i className="bi bi-arrow-right" />
-                      </span>
-                    </a>
-                  </li>
-                )}
-              </ul>
-            </div>
+        <Container>
+          <Row>
+            <Column className="col-lg-8 wow fadeInLeft">
+              <PortfolioGalleryCarousel images={images} carouselId={carouselId} />
+            </Column>
+            <Column className="col-lg-4 wow fadeInRight">
+              <PortfolioDetailsSidebar
+                aboutTitle={aboutTitle}
+                about={about}
+                meta={meta}
+                showDots={showDots}
+                dotCount={dotCount}
+              />
+            </Column>
+          </Row>
+          {showPagination && (
+            <ProjectPaginationOne previous={previous} next={next} />
           )}
-        </div>
+        </Container>
       </div>
     </div>
   );
