@@ -1,20 +1,7 @@
-import { Fragment, type ComponentPropsWithoutRef, type ReactElement } from "react";
-import { Row } from "./Row";
+import { type ComponentPropsWithoutRef } from "react";
+import type { FormChildren } from "./formChildren";
 
-// A Form may only contain Row elements directly. Each Row may only contain
-// Column elements, and the actual form fields live inside the Columns.
-// (Form -> Row -> Column -> fields)
-export type FormChild = ReactElement<unknown, typeof Row>;
-
-export type FormChildren =
-  | FormChild
-  | Array<FormChild | null>
-  | ReactElement<
-      {
-        children?: FormChild | null | Array<FormChild | null>;
-      },
-      typeof Fragment
-    >;
+export type { FormChild, FormChildren } from "./formChildren";
 
 type FormProps = Omit<ComponentPropsWithoutRef<"form">, "children"> & {
   children: FormChildren;

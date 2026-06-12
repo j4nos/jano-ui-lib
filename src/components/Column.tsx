@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
+import type { FormChildren } from "./formChildren";
 
 type ColumnProps = {
-  children: ReactNode;
+  children: FormChildren;
   className?: string;
 };
 
