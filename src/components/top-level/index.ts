@@ -9,6 +9,7 @@ export { default as FancyFeatureThirtyOne } from "./FancyFeatureThirtyOne";
 export { default as FancyFeatureThirtyEight } from "./FancyFeatureThirtyEight";
 export { default as FancyFeatureThirtyNine } from "./FancyFeatureThirtyNine";
 export * from "./FancyShortBannerSixteen";
+export { default as FeedbackCarousel } from "./FeedbackCarousel";
 export { default as FeedbackSectionTen } from "./FeedbackSectionTen";
 export * from "./Header";
 export { default as HeroBannerNine } from "./HeroBannerNine";
