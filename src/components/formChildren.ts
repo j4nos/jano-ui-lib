@@ -15,6 +15,7 @@ import type { HeroBannerNineGalleryLeft } from "./HeroBannerNineGalleryLeft";
 import type { HeroBannerNineGalleryRight } from "./HeroBannerNineGalleryRight";
 import type { PortfolioDetailsSidebar } from "./PortfolioDetailsSidebar";
 import type { PortfolioGalleryCarousel } from "./PortfolioGalleryCarousel";
+import type { PortfolioMetaItem } from "./PortfolioMetaItem";
 import type { PricingPlanCard } from "./PricingPlanCard";
 import type { Row } from "./Row";
 import type { TitleStyleFive } from "./TitleStyleFive";
@@ -46,6 +47,7 @@ export type FormChild =
   | ReactElement<unknown, typeof TitleStyleFive>
   | ReactElement<unknown, typeof PortfolioGalleryCarousel>
   | ReactElement<unknown, typeof PortfolioDetailsSidebar>
+  | ReactElement<unknown, typeof PortfolioMetaItem>
   | ReactElement<unknown, typeof FeatureCard>
   | ReactElement<unknown, typeof CategoryCard>
   | ReactElement<unknown, typeof MoreCategoryCard>

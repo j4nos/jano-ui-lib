@@ -43,6 +43,7 @@ export * from "./PageSubnav";
 export * from "./PanelForm";
 export * from "./PortfolioDetailsSidebar";
 export * from "./PortfolioGalleryCarousel";
+export * from "./PortfolioMetaItem";
 export * from "./Row";
 export * from "./StatusMessage";
 export * from "./TitleStyleFive";

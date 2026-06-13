@@ -1,4 +1,7 @@
 import type { ReactNode } from "react";
+import { Row } from "./Row";
+import { Column } from "./Column";
+import { PortfolioMetaItem } from "./PortfolioMetaItem";
 
 export type PortfolioDetailsSidebarMeta = {
   label: ReactNode;
@@ -30,16 +33,13 @@ export function PortfolioDetailsSidebar({
       {about != null && (
         <p className="border-bottom pb-40 mb-35 lg-pb-20">{about}</p>
       )}
-      <div className="row">
+      <Row>
         {meta.map((item, index) => (
-          <div key={index} className="col-12 mb-35">
-            <div className="pt-title fw-bold tx-dark text-uppercase">
-              {item.label}
-            </div>
-            <div className="pt-text">{item.value}</div>
-          </div>
+          <Column key={index} className="col-12 mb-35">
+            <PortfolioMetaItem label={item.label} value={item.value} />
+          </Column>
         ))}
-      </div>
+      </Row>
       {showDots && dotCount > 0 && (
         <ul className="style-none circle-shape d-flex pt-10">
           {Array.from({ length: dotCount }).map((_, index) => (
