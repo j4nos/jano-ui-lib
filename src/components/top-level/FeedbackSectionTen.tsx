@@ -35,9 +35,9 @@ export default function FeedbackSectionTen({
   title,
   items,
   iconSrc = "/jano/images/icon/icon_98.svg",
-  highlightShapeSrc = "/images/shape/shape_129.svg",
-  shapeOneSrc = "/images/shape/shape_130.svg",
-  shapeTwoSrc = "/images/shape/shape_131.svg",
+  highlightShapeSrc = "/jano/images/shape/shape_129.svg",
+  shapeOneSrc = "/jano/images/shape/shape_130.svg",
+  shapeTwoSrc = "/jano/images/shape/shape_131.svg",
 }: FeedbackSectionTenProps) {
   return (
     <div

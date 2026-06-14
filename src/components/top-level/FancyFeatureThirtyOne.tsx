@@ -29,8 +29,8 @@ export default function FancyFeatureThirtyOne({
   description,
   items,
   highlightShapeSrc = "/jano/images/shape/shape_122.svg",
-  shapeOneSrc = "/images/shape/shape_124.svg",
-  shapeTwoSrc = "/images/shape/shape_125.svg",
+  shapeOneSrc = "/jano/images/shape/shape_124.svg",
+  shapeTwoSrc = "/jano/images/shape/shape_125.svg",
 }: FancyFeatureThirtyOneProps) {
   return (
     <div className="fancy-feature-thirtyOne position-relative zn2 pt-140 pb-140 lg-pt-100 lg-pb-70">

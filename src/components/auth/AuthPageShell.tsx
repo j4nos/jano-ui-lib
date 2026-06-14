@@ -24,13 +24,13 @@ export function AuthPageShell({
       </div>
       <p className="mt-auto pt-50">Copyright @2026 Snoopyon.</p>
       <img
-        src="/images/assets/ils_11.png"
+        src="/jano/images/assets/ils_11.png"
         alt="illustration"
         className="lazy-img illustration-one"
         style={{ pointerEvents: "none" }}
       />
       <img
-        src="/images/assets/ils_12.png"
+        src="/jano/images/assets/ils_12.png"
         alt="illustration"
         className="lazy-img illustration-two"
         style={{ pointerEvents: "none" }}

@@ -46,9 +46,9 @@ export default function HeroBannerNine({
   partnerHighlight,
   highlightShapeSrc = "/jano/images/shape/shape_114.svg",
   ctaIconSrc = "/jano/images/icon/icon_91.svg",
-  galleryImageOneSrc = "/images/media/img_41.jpg",
-  galleryImageTwoSrc = "/images/media/img_42.jpg",
-  galleryImageThreeSrc = "/images/media/img_43.jpg",
+  galleryImageOneSrc = "/jano/images/media/img_41.jpg",
+  galleryImageTwoSrc = "/jano/images/media/img_42.jpg",
+  galleryImageThreeSrc = "/jano/images/media/img_43.jpg",
   partnerShapeSrc = "/jano/images/shape/shape_119.svg",
 }: HeroBannerNineProps) {
   return (
