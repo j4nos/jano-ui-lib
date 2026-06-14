@@ -109,6 +109,10 @@ export function StatusMessage({
         color: "#000",
         fontSize: 15,
         lineHeight: "24px",
+        // Break long unbroken tokens (e.g. tx hashes / calldata) onto new lines
+        // instead of overflowing the box.
+        overflowWrap: "anywhere",
+        wordBreak: "break-word",
         ...style,
       }}
     >
