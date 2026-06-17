@@ -5,6 +5,7 @@ type HeroStat = {
 
 type HeroStudentStat = {
   label: string;
+  href?: string;
 };
 
 type HeroAvatar = {
@@ -63,42 +64,82 @@ export function HeroBannerTwelveMedia({
         <h4>{secondStat.value}</h4>
         <p>{secondStat.label}</p>
       </div>{" "}
-      <div
-        className="card-style card-three d-flex flex-column justify-content-center align-items-center wow fadeInRight"
-        data-wow-delay="0.3"
-        style={{ visibility: "visible", animationName: "fadeInRight" }}
-      >
-        <h5>{studentStat.label}</h5>
-        <div className="avatar d-flex align-items-center">
-          {avatars.slice(0, 4).map((avatar) =>
-            avatar.imageUrl ? (
-              <img
-                key={avatar.name}
-                src={avatar.imageUrl}
-                alt={avatar.name}
-                title={avatar.name}
-                style={{ objectFit: "cover" }}
-              />
-            ) : (
-              <span
-                key={avatar.name}
-                className="avatar_image avatar_fallback"
-                title={avatar.name}
-              >
-                {avatar.name
-                  .split(" ")
-                  .filter(Boolean)
-                  .slice(0, 2)
-                  .map((part) => part[0]?.toUpperCase())
-                  .join("")}
-              </span>
-            ),
-          )}
-          <span className="avatar_image avatar_fallback">
-            <i className="bi bi-arrow-right-short" />
-          </span>
+      {studentStat.href ? (
+        <a
+          href={studentStat.href}
+          className="card-style card-three d-flex flex-column justify-content-center align-items-center wow fadeInRight"
+          data-wow-delay="0.3"
+          style={{ visibility: "visible", animationName: "fadeInRight", textDecoration: "none", color: "inherit" }}
+        >
+          <h5>{studentStat.label}</h5>
+          <div className="avatar d-flex align-items-center">
+            {avatars.slice(0, 4).map((avatar) =>
+              avatar.imageUrl ? (
+                <img
+                  key={avatar.name}
+                  src={avatar.imageUrl}
+                  alt={avatar.name}
+                  title={avatar.name}
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <span
+                  key={avatar.name}
+                  className="avatar_image avatar_fallback"
+                  title={avatar.name}
+                >
+                  {avatar.name
+                    .split(" ")
+                    .filter(Boolean)
+                    .slice(0, 2)
+                    .map((part) => part[0]?.toUpperCase())
+                    .join("")}
+                </span>
+              ),
+            )}
+            <span className="avatar_image avatar_fallback">
+              <i className="bi bi-arrow-right-short" />
+            </span>
+          </div>
+        </a>
+      ) : (
+        <div
+          className="card-style card-three d-flex flex-column justify-content-center align-items-center wow fadeInRight"
+          data-wow-delay="0.3"
+          style={{ visibility: "visible", animationName: "fadeInRight" }}
+        >
+          <h5>{studentStat.label}</h5>
+          <div className="avatar d-flex align-items-center">
+            {avatars.slice(0, 4).map((avatar) =>
+              avatar.imageUrl ? (
+                <img
+                  key={avatar.name}
+                  src={avatar.imageUrl}
+                  alt={avatar.name}
+                  title={avatar.name}
+                  style={{ objectFit: "cover" }}
+                />
+              ) : (
+                <span
+                  key={avatar.name}
+                  className="avatar_image avatar_fallback"
+                  title={avatar.name}
+                >
+                  {avatar.name
+                    .split(" ")
+                    .filter(Boolean)
+                    .slice(0, 2)
+                    .map((part) => part[0]?.toUpperCase())
+                    .join("")}
+                </span>
+              ),
+            )}
+            <span className="avatar_image avatar_fallback">
+              <i className="bi bi-arrow-right-short" />
+            </span>
+          </div>
         </div>
-      </div>{" "}
+      )}{" "}
       <img
         src="jano/images/shape/shape_146.svg"
         alt=""

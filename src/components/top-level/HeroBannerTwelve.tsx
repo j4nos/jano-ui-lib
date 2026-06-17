@@ -8,6 +8,7 @@ type HeroStat = {
 
 type HeroStudentStat = {
   label: string;
+  href?: string;
 };
 
 type HeroAvatar = {
