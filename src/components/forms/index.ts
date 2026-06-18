@@ -1,5 +1,6 @@
 export * from "./CheckboxField";
 export * from "./Fieldset";
+export * from "./FormSectionLabel";
 export * from "./FileInputField";
 export * from "./FormField";
 export * from "./ImageUploadField";

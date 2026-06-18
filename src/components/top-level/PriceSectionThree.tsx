@@ -25,6 +25,7 @@ type PriceSectionThreeTab = {
 };
 
 export type PriceSectionThreeProps = {
+  id?: string;
   className?: string;
   tabsClassName?: string;
   tableAreaClassName?: string;
@@ -34,13 +35,14 @@ export type PriceSectionThreeProps = {
 const defaultTabs: PriceSectionThreeTab[] = [];
 
 export function PriceSectionThree({
+  id,
   className = "",
   tabsClassName = "nav nav-tabs justify-content-center border-0 pricing-nav-three wow fadeInUp",
   tableAreaClassName = "pricing-table-area-three mt-160 lg-mt-100 xs-mt-60 wow fadeInUp",
   tabs = defaultTabs,
 }: PriceSectionThreeProps) {
   return (
-    <div className={`pricing-section-three position-relative ${className}`.trim()}>
+    <div id={id} className={`pricing-section-three position-relative ${className}`.trim()}>
       <div className="container">
         <ul
           className={tabsClassName}

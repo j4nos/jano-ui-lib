@@ -1,8 +1,10 @@
-import type { ReactNode } from "react";
+import type { ReactElement, ReactNode } from "react";
 
-type BlogSectionFiveProps = {
+export type BlogSectionFiveProps = {
+  /** Main column content. */
   left: ReactNode;
-  right: ReactNode;
+  /** Sidebar column — a single element. */
+  right: ReactElement;
   leftClassName?: string;
   rightClassName?: string;
   contentClassName?: string;
@@ -14,7 +16,7 @@ export function BlogSectionFive({
   leftClassName = "col-lg-8",
   rightClassName = "col-lg-4 col-md-8",
   contentClassName,
-}: BlogSectionFiveProps) {
+}: BlogSectionFiveProps): ReactElement {
   return (
     <div className="blog-section-five mt-150">
       <div className="container">

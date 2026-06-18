@@ -36,6 +36,7 @@ the root layout:
 ```tsx
 // app/layout.tsx
 import Script from "next/script";
+import { MainPageWrapper } from "jano-ui-lib";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -45,8 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="stylesheet" href="/jano/css/responsive.css" />
       </head>
       <body>
-        {/* main-page-wrapper is required by the theme CSS */}
-        <div className="main-page-wrapper">{children}</div>
+        {/* MainPageWrapper renders the theme-required `main-page-wrapper`
+            div — put your Header and page content inside it. */}
+        <MainPageWrapper>{children}</MainPageWrapper>
         <Script
           src="/jano/vendor/bootstrap/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
@@ -85,12 +87,21 @@ import { Button, Form, Row, Column, TextInputField, FormSubmitButton } from "jan
   signed in; `"Platform Admin"` shows only when `isAdmin`.
 - `BlogCommentArea` takes a `comments` array — only `message` is required per
   comment (`name`, `avatarSrc`, `date`, `showReply` are optional).
+- `MainPageWrapper` / `Block` render theme-classed `div`s; `Block` forwards a
+  `ref` and all native div attributes (so use it for `role`/`aria-*`/anchors).
+- `Flex` builds a flexbox via Bootstrap utilities: `align`, `justify`, `gap`
+  (0–5), `wrap`, `direction`, `inline`.
+- `List` / `ListItem` replace native `ul`/`li` (`ListItem` forwards
+  `onClick`/`onKeyDown`/`role`/`tabIndex` for interactive items).
+- `Select` wraps a native `select` (defaults to the `form-select` class);
+  pass `option`s as children. For a full labelled field use `SelectField`.
 
 ## Components
 
-Layout/primitives: `Button` `CtaButton` `CopyButton` `BrandWordmark` `Row`
-`Column` `DataCardGrid` `StatusMessage` `ToastIndicator` `TitleStyleThree`
-`PageSubnav` `CheckmarkList` `ModuleDialogue`.
+Layout/primitives: `MainPageWrapper` `Block` `Flex` `Row` `Column` `List`
+`ListItem` `Button` `CtaButton` `CopyButton` `BrandWordmark` `DataCardGrid`
+`Select` `StatusMessage` `ToastIndicator` `TitleStyleThree` `PageSubnav`
+`CheckmarkList` `ModuleDialogue`.
 
 Forms: `Form` `FormSubmitButton` `PanelForm` `Fieldset` `FormField`
 `TextInputField` `TextAreaField` `SelectField` `CheckboxField` `RadioGroupField`
@@ -100,7 +111,7 @@ Auth: `AuthInputField` `AuthPasswordField` `AuthPageShell` `Login` `Signup`.
 
 Blog/content: `BlogCommentArea` `BlogCommentForm` `BlogDetailsSection`
 `BlogSectionFive` `BlogSectionSeven` `BlogSectionSevenColumn`
-`BlogSidebarCategory` `BlogMetaSeven` `BlogMetaThree` `BlockStyleEight`.
+`BlogMetaSeven` `BlogMetaThree` `BlockStyleEight`.
 
 Sections: `Header` `JanoFooter` `HeroBannerNine` `HeroBannerTwelve`
 `FancyFeatureForty(One|OneAccordion)` `FancyFeatureThirty(One|Eight|Nine)`
