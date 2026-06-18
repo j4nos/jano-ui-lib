@@ -6,12 +6,18 @@ type AuthPageShellProps = {
   title: string;
   subtitle: ReactNode;
   children: ReactNode;
+  /** Bottom-right illustration. Defaults to the Jano theme asset. */
+  illustrationOneSrc?: string;
+  /** Bottom-left illustration. Defaults to the Jano theme asset. */
+  illustrationTwoSrc?: string;
 };
 
 export function AuthPageShell({
   title,
   subtitle,
   children,
+  illustrationOneSrc = "/jano/images/assets/ils_11.png",
+  illustrationTwoSrc = "/jano/images/assets/ils_12.png",
 }: AuthPageShellProps) {
   return (
     <div className="user-data-section d-flex align-items-center justify-content-center flex-column position-relative">
@@ -24,13 +30,13 @@ export function AuthPageShell({
       </div>
       <p className="mt-auto pt-50">Copyright @2026 Snoopyon.</p>
       <img
-        src="/jano/images/assets/ils_11.png"
+        src={illustrationOneSrc}
         alt="illustration"
         className="lazy-img illustration-one"
         style={{ pointerEvents: "none" }}
       />
       <img
-        src="/jano/images/assets/ils_12.png"
+        src={illustrationTwoSrc}
         alt="illustration"
         className="lazy-img illustration-two"
         style={{ pointerEvents: "none" }}

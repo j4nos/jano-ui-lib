@@ -29,6 +29,8 @@ type LoginProps = {
   ) => void;
   onSubmit: (form: LoginTemplateFormState) => void | Promise<void>;
   onGoogleSignIn: () => void | Promise<void>;
+  illustrationOneSrc?: string;
+  illustrationTwoSrc?: string;
 };
 
 export function Login({
@@ -40,6 +42,8 @@ export function Login({
   updateField,
   onSubmit,
   onGoogleSignIn,
+  illustrationOneSrc,
+  illustrationTwoSrc,
 }: LoginProps) {
   function getSubmittedForm(
     formElement: HTMLFormElement,
@@ -62,6 +66,8 @@ export function Login({
   return (
     <AuthPageShell
       title="Login"
+      illustrationOneSrc={illustrationOneSrc}
+      illustrationTwoSrc={illustrationTwoSrc}
       subtitle={
         <>
           Still don&apos;t have an account? <Link href="/signup">Sign up</Link>

@@ -47,6 +47,8 @@ type SignupProps = {
   ) => void | Promise<void>;
   onResendCode: () => void | Promise<void>;
   onGoogleSignIn: () => void | Promise<void>;
+  illustrationOneSrc?: string;
+  illustrationTwoSrc?: string;
 };
 
 export function Signup({
@@ -64,6 +66,8 @@ export function Signup({
   onConfirmSubmit,
   onResendCode,
   onGoogleSignIn,
+  illustrationOneSrc,
+  illustrationTwoSrc,
 }: SignupProps) {
   function getSubmittedRegistrationForm(
     formElement: HTMLFormElement,
@@ -100,6 +104,8 @@ export function Signup({
   return (
     <AuthPageShell
       title={needsConfirmation ? "Confirm registration" : "Registration"}
+      illustrationOneSrc={illustrationOneSrc}
+      illustrationTwoSrc={illustrationTwoSrc}
       subtitle={
         <>
           Have an account? Login <Link href="/login">Here</Link>
