@@ -1,4 +1,5 @@
 export * from "./BlogSectionFive";
+export { default as BlogSectionTwo } from "./BlogSectionTwo";
 export * from "./BlogSectionSeven";
 export * from "./CompareTable";
 export * from "./ErrorPageContent";
@@ -12,6 +13,7 @@ export * from "./FancyShortBannerSixteen";
 export { default as FeedbackCarousel } from "./FeedbackCarousel";
 export { default as FeedbackSectionTen } from "./FeedbackSectionTen";
 export * from "./Header";
+export * from "./HeroBannerFive";
 export { default as HeroBannerNine } from "./HeroBannerNine";
 export { default as HeroBannerTwelve } from "./HeroBannerTwelve";
 export * from "./JanoFooter";

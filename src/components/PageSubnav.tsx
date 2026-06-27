@@ -11,18 +11,24 @@ export type PageSubnavItem = {
 
 type PageSubnavProps = {
   items: PageSubnavItem[];
+  /** Override active detection — use when active state comes from search params rather than pathname. */
+  activeSlug?: string;
   className?: string;
+  /** Top padding of the section in px. Default: 0. */
+  paddingTop?: number;
 };
 
 export function PageSubnav({
   items,
-  className = "mt-70",
+  activeSlug,
+  className,
+  paddingTop = 0,
 }: PageSubnavProps) {
   const pathname = usePathname();
 
   return (
     <section
-      style={{ position: "relative", zIndex: 1, paddingTop: 120 }}
+      style={{ position: "relative", zIndex: 1, paddingTop }}
       className={className}
     >
       <div className="container">
@@ -32,7 +38,9 @@ export function PageSubnav({
           style={{ margin: "0 0 60px" }}
         >
           {items.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = activeSlug != null
+              ? activeSlug === item.slug
+              : pathname === item.href;
 
             return (
               <Link

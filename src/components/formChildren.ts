@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import type { BlogCommentForm } from "./BlogCommentForm";
 import type { Button } from "./Button";
 import type { FormSectionLabel } from "./forms/FormSectionLabel";
 import type { CategoryCard, MoreCategoryCard } from "./CategoryCard";
@@ -32,6 +33,7 @@ import type { TextAreaField } from "./forms/TextAreaField";
 import type { TextInputField } from "./forms/TextInputField";
 
 export type FormChild =
+  | ReactElement<unknown, typeof BlogCommentForm>
   | ReactElement<unknown, typeof TextInputField>
   | ReactElement<unknown, typeof TextAreaField>
   | ReactElement<unknown, typeof SelectField>

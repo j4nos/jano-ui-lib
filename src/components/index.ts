@@ -6,6 +6,7 @@ export type { BlogComment } from "./BlogCommentArea";
 export * from "./BlogCommentForm";
 export * from "./BlogDetailsSection";
 export * from "./BlogSectionSevenColumn";
+export * from "./BlogMetaFive";
 export * from "./BlogMetaSeven";
 export * from "./BlogMetaThree";
 export * from "./BrandWordmark";
