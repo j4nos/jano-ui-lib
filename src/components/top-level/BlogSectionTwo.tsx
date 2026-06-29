@@ -1,9 +1,9 @@
-import { type ReactNode } from "react";
 import { Container } from "../Container";
 import { Row } from "../Row";
+import type { RowChildren } from "../Row";
 
 export type BlogSectionTwoProps = {
-  children: ReactNode;
+  children: RowChildren;
   eyebrow?: string;
   title?: string;
   description?: string;
