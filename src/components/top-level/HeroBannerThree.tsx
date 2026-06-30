@@ -8,11 +8,17 @@ export type HeroBannerThreeProps = {
   contentColumnClass?: string;
   /** Bootstrap col class for the media (right) column. Default: "col-lg-8" */
   mediaColumnClass?: string;
+  /** Override for the first (left) screen image. Default: jano/images/media/img_13.png */
+  image1Src?: string;
+  /** Override for the second (right) screen image. Default: jano/images/media/img_14.png */
+  image2Src?: string;
 };
 
 export function HeroBannerThree({
   contentColumnClass = "col-lg-4",
   mediaColumnClass = "col-lg-8",
+  image1Src = "jano/images/media/img_13.png",
+  image2Src = "jano/images/media/img_14.png",
 }: HeroBannerThreeProps): ReactElement {
   return (
     <Block className="hero-banner-three position-relative pt-200 md-pt-150">
@@ -86,7 +92,7 @@ export function HeroBannerThree({
                 <Block className="col-6">
                   <img
                     src="jano/images/lazy.svg"
-                    data-src="jano/images/media/img_13.png"
+                    data-src={image1Src}
                     alt=""
                     className="lazy-img screen-one"
                   />
@@ -102,7 +108,7 @@ export function HeroBannerThree({
                   </Block>
                   <img
                     src="jano/images/lazy.svg"
-                    data-src="jano/images/media/img_14.png"
+                    data-src={image2Src}
                     alt=""
                     className="lazy-img screen-two"
                   />
