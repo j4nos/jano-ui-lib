@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import type { BlogCommentForm } from "./BlogCommentForm";
 import type { Button } from "./Button";
+import type { FilterTags } from "./FilterTags";
 import type { FormSectionLabel } from "./forms/FormSectionLabel";
 import type { CategoryCard, MoreCategoryCard } from "./CategoryCard";
 import type { Column } from "./Column";
@@ -65,6 +66,7 @@ export type FormChild =
   | ReactElement<unknown, typeof FooterLegalLinks>
   | ReactElement<unknown, typeof FooterSocialLinks>
   | ReactElement<unknown, typeof FooterCopyright>
-  | ReactElement<unknown, typeof FormSectionLabel>;
+  | ReactElement<unknown, typeof FormSectionLabel>
+  | ReactElement<unknown, typeof FilterTags>;
 
 export type FormChildren = FormChild | Array<FormChild | null | false>;
