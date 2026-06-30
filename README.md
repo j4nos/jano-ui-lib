@@ -96,6 +96,31 @@ import { Button, Form, Row, Column, TextInputField, FormSubmitButton } from "jan
 - `Select` wraps a native `select` (defaults to the `form-select` class);
   pass `option`s as children. For a full labelled field use `SelectField`.
 
+## ESLint rule in consuming apps
+
+Consuming apps ban native HTML structural elements in JSX and require
+jano-ui-lib components instead. The rule covers:
+`div`, `section`, `main`, `article`, `header`, `footer`, `nav`,
+`ul`, `ol`, `li`, `h1`–`h6`.
+
+**The rule does NOT apply inside jano-ui-lib itself** — only in the app code.
+
+Native → jano-ui-lib mapping:
+
+| Native element | jano-ui-lib component | Notes |
+|---|---|---|
+| `<div>` | `<Block>` | forwards all div props + ref |
+| `<div className="d-flex ...">` | `<Flex>` | use `align`, `justify`, `gap`, `wrap` props |
+| `<div className="row ...">` | `<Row>` | accepts only `Column` children |
+| `<div className="col-...">` | `<Column className="col-...">` | pass Bootstrap col class via `className` |
+| `<h1>`–`<h6>` | `<Heading level={1..6}>` | renders the correct heading tag |
+| `<ul>` / `<li>` | `<List>` / `<ListItem>` | |
+| `<ul className="d-flex tags ...">` | `<Tags tags={[...]} label="Tag:">` | data-driven tag list |
+
+When a new native element pattern is needed and no existing component fits,
+add a wrapper component to jano-ui-lib, export it from `src/components/index.ts`,
+rebuild (`npm run build`), then `npm install` in the consuming app.
+
 ## Components
 
 Layout/primitives: `MainPageWrapper` `Block` `Flex` `Row` `Column` `List`
@@ -117,6 +142,10 @@ Sections: `Header` `JanoFooter` `HeroBannerNine` `HeroBannerTwelve`
 `FancyFeatureForty(One|OneAccordion)` `FancyFeatureThirty(One|Eight|Nine)`
 `FancyFeatureThirteen` `FancyShortBannerSixteen` `FeedbackSectionTen`
 `CompareTable` `PriceSectionThree` `PagePaginationOne` `ErrorPageContent`.
+
+Typography: `Heading` (h1–h6 wrapper).
+
+Tags/metadata: `Tags` (data-driven tag list with label).
 
 ## Develop
 
