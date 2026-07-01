@@ -91,10 +91,9 @@ export function HeroBannerThree({
               <Row className="gx-xxl-5 justify-content-center align-items-center">
                 <Block className="col-6">
                   <img
-                    src="jano/images/lazy.svg"
-                    data-src={image1Src}
+                    src={image1Src}
                     alt=""
-                    className="lazy-img screen-one"
+                    className="screen-one"
                   />
                 </Block>
                 <Block className="col-6">
@@ -107,10 +106,9 @@ export function HeroBannerThree({
                     </h6>
                   </Block>
                   <img
-                    src="jano/images/lazy.svg"
-                    data-src={image2Src}
+                    src={image2Src}
                     alt=""
-                    className="lazy-img screen-two"
+                    className="screen-two"
                   />
                 </Block>
               </Row>
