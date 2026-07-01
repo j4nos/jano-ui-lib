@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
 import { Row } from "../Row";
 import { Column } from "../Column";
 import { FooterBrandIntro } from "../FooterBrandIntro";
+import type { FooterBrandIntroProps } from "../FooterBrandIntro";
 import { FooterLinkColumn } from "../FooterLinkColumn";
 import { FooterNewsletter } from "../FooterNewsletter";
 import { FooterLegalLinks } from "../FooterLegalLinks";
@@ -21,7 +21,7 @@ export type JanoFooterColumn = {
 };
 
 type JanoFooterProps = {
-  brand?: ReactNode;
+  brand?: FooterBrandIntroProps["brand"];
   columns?: JanoFooterColumn[];
   newsletterTitle?: string;
   newsletterSubtitle?: string;
