@@ -5,12 +5,12 @@ export type FilterTagProps = {
 
 export function FilterTag({ label, onRemove }: FilterTagProps) {
   return (
-    <li className="d-inline-flex align-items-center">
+    <li className="d-inline-flex align-items-center badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">
       <span>{label}</span>
       {onRemove && (
         <button
           type="button"
-          className="tag-remove-btn ms-1"
+          className="tag-remove-btn ms-2 border-0 bg-transparent p-0 text-primary"
           aria-label={`Remove ${label}`}
           onClick={onRemove}
         >
