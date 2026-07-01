@@ -130,7 +130,7 @@ export function Header({
         className={
           isLightTone
             ? "theme-main-menu sticky-menu theme-menu-seven white-vr"
-            : "theme-main-menu sticky-menu theme-menu-eight border-bottom"
+            : "theme-main-menu sticky-menu theme-menu-eight"
         }
       >
         <div className="inner-content position-relative">
