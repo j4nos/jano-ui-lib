@@ -12,6 +12,8 @@ export type HeroBannerThreeProps = {
   ctaLabel?: string;
   /** href for the primary CTA button. Default: "#" */
   ctaHref?: string;
+  /** Override the entire CTA slot with a custom node (e.g. a Button). */
+  cta?: ReactNode;
   /** Bootstrap col class for the content (left) column. Default: "col-lg-4" */
   contentColumnClass?: string;
   /** Bootstrap col class for the media (right) column. Default: "col-lg-8" */
@@ -27,6 +29,7 @@ export function HeroBannerThree({
   subtitle,
   ctaLabel = "Browse Jobs",
   ctaHref = "#",
+  cta,
   contentColumnClass = "col-lg-4",
   mediaColumnClass = "col-lg-8",
   image1Src,
@@ -44,7 +47,7 @@ export function HeroBannerThree({
               <p className="text-lg mb-50 lg-mb-30 pe-xxl-4">{subtitle}</p>
             )}
             <div className="download-btn d-inline-block mb-25">
-              <a href={ctaHref} className="tran3s">{ctaLabel}</a>
+              {cta ?? <a href={ctaHref} className="tran3s">{ctaLabel}</a>}
             </div>
           </Block>
           <Block className={`${mediaColumnClass} wow fadeInRight`}>
