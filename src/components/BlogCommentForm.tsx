@@ -1,12 +1,12 @@
-import type { ReactElement } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 import { Form } from "./Form";
+import type { FormChildren } from "./formChildren";
 
-type BlogCommentFormChild =
-  | ReactElement<unknown, typeof Form>
-  | Array<ReactElement<unknown, typeof Form> | null>;
-
-type BlogCommentFormProps = {
-  children: BlogCommentFormChild;
+type BlogCommentFormProps = Omit<
+  ComponentPropsWithoutRef<"form">,
+  "children" | "className" | "id"
+> & {
+  children: FormChildren;
   id?: string;
   className?: string;
 };
@@ -15,11 +15,12 @@ export function BlogCommentForm({
   children,
   id,
   className = "",
+  ...formProps
 }: BlogCommentFormProps) {
   const classes = ["blog-comment-form", className].filter(Boolean).join(" ");
   return (
     <div id={id} className={classes}>
-      {children}
+      <Form {...formProps}>{children}</Form>
     </div>
   );
 }
