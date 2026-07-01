@@ -14,9 +14,9 @@ export type HeroBannerThreeProps = {
   ctaHref?: string;
   /** Override the entire CTA slot with a custom node (e.g. a Button). */
   cta?: ReactNode;
-  /** Bootstrap col class for the content (left) column. Default: "col-lg-4" */
+  /** Bootstrap col class for the content (left) column. Default: "col-lg-6" */
   contentColumnClass?: string;
-  /** Bootstrap col class for the media (right) column. Default: "col-lg-8" */
+  /** Bootstrap col class for the media (right) column. Default: "col-lg-6" */
   mediaColumnClass?: string;
   /** First screen image src. */
   image1Src?: string;
@@ -30,8 +30,8 @@ export function HeroBannerThree({
   ctaLabel = "Browse Jobs",
   ctaHref = "#",
   cta,
-  contentColumnClass = "col-lg-4",
-  mediaColumnClass = "col-lg-8",
+  contentColumnClass = "col-lg-6",
+  mediaColumnClass = "col-lg-6",
   image1Src,
   image2Src,
 }: HeroBannerThreeProps): ReactElement {
