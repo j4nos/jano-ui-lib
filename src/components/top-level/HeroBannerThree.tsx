@@ -12,6 +12,10 @@ export type HeroBannerThreeProps = {
   image1Src?: string;
   /** Override for the second (right) screen image. Default: jano/images/media/img_14.png */
   image2Src?: string;
+  /** Label for the primary CTA button. Default: "Download - It's free" */
+  ctaLabel?: string;
+  /** href for the primary CTA button. Default: "#" */
+  ctaHref?: string;
 };
 
 export function HeroBannerThree({
@@ -19,6 +23,8 @@ export function HeroBannerThree({
   mediaColumnClass = "col-lg-8",
   image1Src = "jano/images/media/img_13.png",
   image2Src = "jano/images/media/img_14.png",
+  ctaLabel = "Download - It's free",
+  ctaHref = "#",
 }: HeroBannerThreeProps): ReactElement {
   return (
     <Block className="hero-banner-three position-relative pt-200 md-pt-150">
@@ -49,36 +55,10 @@ export function HeroBannerThree({
                   </strong>
                 </div>
               </a>
-              <div className="dropdown download-btn d-inline-block mb-25 me-4 order-sm-first">
-                <button
-                  className="dropdown-toggle tran3s"
-                  type="button"
-                  id="appDownBtn"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Download - It&apos;s free
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="appDownBtn">
-                  <li>
-                    <a
-                      className="dropdown-item d-flex align-items-center fw-500"
-                      href="#"
-                    >
-                      <img src="jano/images/icon/icon_22.svg" alt="" />{" "}
-                      <span className="ps-2">IOS &amp; Android</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item d-flex align-items-center fw-500"
-                      href="#"
-                    >
-                      <img src="jano/images/icon/icon_23.svg" alt="" />{" "}
-                      <span className="ps-2">Mac &amp; Windows</span>
-                    </a>
-                  </li>
-                </ul>
+              <div className="download-btn d-inline-block mb-25 me-4 order-sm-first">
+                <a href={ctaHref} className="tran3s">
+                  {ctaLabel}
+                </a>
               </div>
             </div>
             <h2 className="fw-500 mt-40 mb-5">A+ Rating </h2>

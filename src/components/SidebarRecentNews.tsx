@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+import { Button } from "./Button";
 
 export type SidebarRecentNewsItem = {
   id: string;
@@ -86,7 +87,7 @@ export function SidebarRecentNews(props: SidebarRecentNewsProps): ReactElement {
     <div className="sidebar-recent-news mb-60 md-mb-50">
       <h4 className="sidebar-title">{title}</h4>
       {items.length === 0 && (
-        <p className="text-muted small pt-20">Nincs találat.</p>
+        <p className="text-muted small pt-20">No results.</p>
       )}
       {items.map((item, i) => (
         <div
@@ -109,14 +110,15 @@ export function SidebarRecentNews(props: SidebarRecentNewsProps): ReactElement {
       ))}
       {hasMore && (
         <div className="pt-20 pb-20 border-top border-bottom">
-          <button
+          <Button
             type="button"
-            className="btn btn-sm btn-outline-secondary w-100"
+            tone="pill"
+            withTopMargin={false}
             onClick={onLoadMore}
             disabled={loadingMore}
           >
-            {loadingMore ? "Töltés..." : "Több betöltése"}
-          </button>
+            {loadingMore ? "Loading..." : "Load more"}
+          </Button>
         </div>
       )}
     </div>
