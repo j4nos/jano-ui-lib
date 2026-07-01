@@ -36,7 +36,6 @@ export * from "./FooterNewsletter";
 export * from "./FooterLegalLinks";
 export * from "./FooterSocialLinks";
 export * from "./FooterCopyright";
-export * from "./Form";
 export { default as FancyFeatureFortyOneAccordion } from "./FancyFeatureFortyOneAccordion";
 export type { FancyFeatureFortyOneAccordionItem } from "./FancyFeatureFortyOneAccordion";
 export * from "./FancyFeatureThirteen";
