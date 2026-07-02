@@ -30,7 +30,7 @@ export function TextInputField({
       labelClassName={labelClassName}
       className={wrapperClassName}
     >
-      <input id={htmlFor} {...props} />
+      <input id={htmlFor} required={required} {...props} />
     </FormField>
   );
 }

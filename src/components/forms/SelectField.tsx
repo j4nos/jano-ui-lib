@@ -35,6 +35,7 @@ export function SelectField({
       <div style={{ position: "relative" }}>
         <select
           id={htmlFor}
+          required={required}
           style={{
             display: "block",
             fontSize: "17px",

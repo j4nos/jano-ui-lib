@@ -86,6 +86,7 @@ export function FileInputField({
         </label>
         <input
           id={htmlFor}
+          required={required}
           {...props}
           type="file"
           onChange={handleChange}

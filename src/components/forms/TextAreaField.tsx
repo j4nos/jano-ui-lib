@@ -30,7 +30,7 @@ export function TextAreaField({
       labelClassName={labelClassName}
       className={wrapperClassName}
     >
-      <textarea id={htmlFor} {...props} />
+      <textarea id={htmlFor} required={required} {...props} />
     </FormField>
   );
 }
