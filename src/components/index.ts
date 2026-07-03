@@ -42,6 +42,8 @@ export type { FancyFeatureFortyOneAccordionItem } from "./FancyFeatureFortyOneAc
 export * from "./FancyFeatureThirteen";
 export * from "./Flex";
 export * from "./FormSubmitButton";
+export * from "./FormTogglePillButton";
+export * from "./FormToggleButtonGroup";
 export * from "./List";
 export * from "./ListItem";
 export * from "./MainPageWrapper";

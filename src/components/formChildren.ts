@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import type { BlogCommentForm } from "./BlogCommentForm";
 import type { FormButton } from "./FormButton";
+import type { FormToggleButtonGroup } from "./FormToggleButtonGroup";
 import type { FilterTags } from "./FilterTags";
 import type { FormSectionLabel } from "./forms/FormSectionLabel";
 import type { CategoryCard, MoreCategoryCard } from "./CategoryCard";
@@ -48,6 +49,7 @@ export type FormChild =
   | ReactElement<unknown, typeof Column>
   | ReactElement<unknown, typeof FormSubmitButton>
   | ReactElement<unknown, typeof FormButton>
+  | ReactElement<unknown, typeof FormToggleButtonGroup>
   | ReactElement<unknown, typeof TitleStyleFive>
   | ReactElement<unknown, typeof PortfolioGalleryCarousel>
   | ReactElement<unknown, typeof PortfolioDetailsSidebar>
