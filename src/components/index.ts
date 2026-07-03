@@ -11,6 +11,7 @@ export * from "./BlogMetaSeven";
 export * from "./BlogMetaThree";
 export * from "./BrandWordmark";
 export * from "./Button";
+export * from "./FormButton";
 export * from "./CopyButton";
 export * from "./CtaButton";
 export * from "./CategoryCard";
