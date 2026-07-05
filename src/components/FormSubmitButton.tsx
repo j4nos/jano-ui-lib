@@ -14,7 +14,7 @@ export function FormSubmitButton({
   children,
   pendingLabel,
   variant = "default",
-  withTopMargin = true,
+  withTopMargin = false,
   className = "",
   type = "submit",
   disabled,
