@@ -25,10 +25,12 @@ export function FormField({
 }: FormFieldProps) {
   return (
     <div className={className}>
-      <label htmlFor={htmlFor} className={labelClassName}>
-        {label}
-        {required ? "*" : null}
-      </label>
+      {label ? (
+        <label htmlFor={htmlFor} className={labelClassName}>
+          {label}
+          {required ? "*" : null}
+        </label>
+      ) : null}
       {children}
       {description ? <p>{description}</p> : null}
     </div>
