@@ -23,6 +23,8 @@ export type CompareTableRow = {
 type CompareTableProps = {
   columns: CompareTableColumn[];
   rows: CompareTableRow[];
+  /** Header text for the row-label column (first `<th>`, blank by default). */
+  rowHeaderLabel?: string;
   /** Optional title rendered above the table (matching the Jano `title-style-seven` pattern). */
   title?: ReactNode;
   /** Optional eyebrow under/over the title. */
@@ -69,6 +71,7 @@ const DEFAULT_CHECKMARK = (
 export function CompareTable({
   columns,
   rows,
+  rowHeaderLabel,
   title,
   eyebrow,
   checkmark = DEFAULT_CHECKMARK,
@@ -96,7 +99,7 @@ export function CompareTable({
             <table className="table">
               <thead>
                 <tr>
-                  <th></th>
+                  <th>{rowHeaderLabel}</th>
                   {columns.map((column) => (
                     <th key={column.label} className={column.className}>
                       {column.label}
