@@ -26,6 +26,7 @@ type HeaderTone = "light" | "dark";
 
 export type HeaderBrandProps = Omit<BrandWordmarkProps, "href">;
 
+/** Generic "label + href" shape, handy for building a rightWidget link. */
 export type HeaderUpLink = {
   label: string;
   href: string;
@@ -42,9 +43,13 @@ type HeaderProps = {
   navLabel?: string;
   isAuthenticated?: boolean;
   isAdmin?: boolean;
-  userDisplayName?: string;
-  /** Replaces the right-side user name with a "back up one level" link. */
-  upLink?: HeaderUpLink;
+  /**
+   * Content for the header's right-side slot (next to the logo, before the
+   * nav). Each consuming project decides what belongs here - a user name, a
+   * "back up one level" link, an avatar, nothing at all, etc. Header itself
+   * has no opinion; just render whatever markup the project needs.
+   */
+  rightWidget?: ReactNode;
   onLogout?: () => void | Promise<void>;
 };
 
@@ -95,8 +100,7 @@ export function Header({
   navLabel = "Primary navigation",
   isAuthenticated = false,
   isAdmin = false,
-  userDisplayName = "",
-  upLink,
+  rightWidget,
   onLogout,
 }: HeaderProps) {
   const pathname = usePathname();
@@ -148,20 +152,7 @@ export function Header({
             </div>
 
             <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center order-lg-3">
-              {upLink ? (
-                <Link
-                  href={upLink.href}
-                  className={`fw-500 ${isLightTone ? "text-white" : "tx-dark"}`}
-                >
-                  {upLink.label}
-                </Link>
-              ) : isAuthenticated && userDisplayName ? (
-                <span
-                  className={`fw-500 ${isLightTone ? "text-white" : "tx-dark"}`}
-                >
-                  {userDisplayName}
-                </span>
-              ) : null}
+              {rightWidget}
             </div>
 
             {showNav && resolvedMenuGroups.length > 0 ? (
