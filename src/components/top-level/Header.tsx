@@ -26,6 +26,11 @@ type HeaderTone = "light" | "dark";
 
 export type HeaderBrandProps = Omit<BrandWordmarkProps, "href">;
 
+export type HeaderUpLink = {
+  label: string;
+  href: string;
+};
+
 type HeaderProps = {
   brand: HeaderBrandProps;
   brandHref?: string;
@@ -38,6 +43,8 @@ type HeaderProps = {
   isAuthenticated?: boolean;
   isAdmin?: boolean;
   userDisplayName?: string;
+  /** Replaces the right-side user name with a "back up one level" link. */
+  upLink?: HeaderUpLink;
   onLogout?: () => void | Promise<void>;
 };
 
@@ -89,6 +96,7 @@ export function Header({
   isAuthenticated = false,
   isAdmin = false,
   userDisplayName = "",
+  upLink,
   onLogout,
 }: HeaderProps) {
   const pathname = usePathname();
@@ -140,7 +148,14 @@ export function Header({
             </div>
 
             <div className="right-widget ms-auto ms-lg-0 d-flex align-items-center order-lg-3">
-              {isAuthenticated && userDisplayName ? (
+              {upLink ? (
+                <Link
+                  href={upLink.href}
+                  className={`fw-500 ${isLightTone ? "text-white" : "tx-dark"}`}
+                >
+                  {upLink.label}
+                </Link>
+              ) : isAuthenticated && userDisplayName ? (
                 <span
                   className={`fw-500 ${isLightTone ? "text-white" : "tx-dark"}`}
                 >
