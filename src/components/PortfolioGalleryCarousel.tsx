@@ -32,24 +32,28 @@ export function PortfolioGalleryCarousel({
           </div>
         ))}
       </div>
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target={`#${carouselId}`}
-        data-bs-slide="prev"
-      >
-        <i className="bi bi-chevron-left" />
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target={`#${carouselId}`}
-        data-bs-slide="next"
-      >
-        <i className="bi bi-chevron-right" />
-        <span className="visually-hidden">Next</span>
-      </button>
+      {images.length > 1 ? (
+        <>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target={`#${carouselId}`}
+            data-bs-slide="prev"
+          >
+            <i className="bi bi-chevron-left" />
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target={`#${carouselId}`}
+            data-bs-slide="next"
+          >
+            <i className="bi bi-chevron-right" />
+            <span className="visually-hidden">Next</span>
+          </button>
+        </>
+      ) : null}
     </div>
   );
 }
