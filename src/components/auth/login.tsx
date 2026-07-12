@@ -5,7 +5,7 @@ import { Button } from "../Button";
 import { Column } from "../Column";
 import { Form } from "../Form";
 import { Row } from "../Row";
-import { CheckboxField } from "../forms/CheckboxField";
+import { FormCheckboxField } from "../forms/FormCheckboxField";
 import { AuthInputField } from "./AuthInputField";
 import { AuthPageShell } from "./AuthPageShell";
 import { AuthPasswordField } from "./AuthPasswordField";
@@ -123,7 +123,7 @@ export function Login({
             />
           </Column>
           <Column>
-            <CheckboxField
+            <FormCheckboxField
               id="remember"
               name="rememberMe"
               label="Keep me logged in"

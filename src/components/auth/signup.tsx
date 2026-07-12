@@ -5,7 +5,7 @@ import { Button } from "../Button";
 import { Column } from "../Column";
 import { Form } from "../Form";
 import { Row } from "../Row";
-import { CheckboxField } from "../forms/CheckboxField";
+import { FormCheckboxField } from "../forms/FormCheckboxField";
 import { AuthInputField } from "./AuthInputField";
 import { AuthPageShell } from "./AuthPageShell";
 import { AuthPasswordField } from "./AuthPasswordField";
@@ -176,7 +176,7 @@ export function Signup({
               />
             </Column>
             <Column>
-              <CheckboxField
+              <FormCheckboxField
                 id="agree_to_policy"
                 name="agree_to_policy"
                 checked={registrationForm.agreedToPolicy}

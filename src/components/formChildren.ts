@@ -26,7 +26,7 @@ import type { TitleStyleFive } from "./TitleStyleFive";
 import type { TitleStyleTen } from "./TitleStyleTen";
 import type { AuthInputField } from "./auth/AuthInputField";
 import type { AuthPasswordField } from "./auth/AuthPasswordField";
-import type { CheckboxField } from "./forms/CheckboxField";
+import type { FormCheckboxField } from "./forms/FormCheckboxField";
 import type { FileInputField } from "./forms/FileInputField";
 import type { ImageUploadField } from "./forms/ImageUploadField";
 import type { RadioGroupField } from "./forms/RadioGroupField";
@@ -42,7 +42,7 @@ export type FormChild =
   | ReactElement<unknown, typeof FileInputField>
   | ReactElement<unknown, typeof RadioGroupField>
   | ReactElement<unknown, typeof ImageUploadField>
-  | ReactElement<unknown, typeof CheckboxField>
+  | ReactElement<unknown, typeof FormCheckboxField>
   | ReactElement<unknown, typeof AuthInputField>
   | ReactElement<unknown, typeof AuthPasswordField>
   | ReactElement<unknown, typeof Row>
