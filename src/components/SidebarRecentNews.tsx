@@ -28,10 +28,8 @@ export function SidebarRecentNews(props: SidebarRecentNewsProps): ReactElement {
         <div className="news-block d-flex align-items-center pt-20 pb-20 border-top">
           <div>
             <img
-              src="jano/images/lazy.svg"
-              data-src="jano/images/blog/blog_img_17.jpg"
+              src="/jano/images/blog/blog_img_17.jpg"
               alt=""
-              className="lazy-img"
             />
           </div>
           <div className="post ps-4">
@@ -46,10 +44,8 @@ export function SidebarRecentNews(props: SidebarRecentNewsProps): ReactElement {
         <div className="news-block d-flex align-items-center pt-20 pb-20 border-top">
           <div>
             <img
-              src="jano/images/lazy.svg"
-              data-src="jano/images/blog/blog_img_18.jpg"
+              src="/jano/images/blog/blog_img_18.jpg"
               alt=""
-              className="lazy-img"
             />
           </div>
           <div className="post ps-4">
@@ -64,10 +60,8 @@ export function SidebarRecentNews(props: SidebarRecentNewsProps): ReactElement {
         <div className="news-block d-flex align-items-center pt-20 pb-20 border-top border-bottom">
           <div>
             <img
-              src="jano/images/lazy.svg"
-              data-src="jano/images/blog/blog_img_19.jpg"
+              src="/jano/images/blog/blog_img_19.jpg"
               alt=""
-              className="lazy-img"
             />
           </div>
           <div className="post ps-4">

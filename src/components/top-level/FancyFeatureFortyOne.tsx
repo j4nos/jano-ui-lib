@@ -123,13 +123,13 @@ export default function FancyFeatureFortyOne({
                 </Row>
               </Container>
               <img
-                src="jano/images/shape/shape_152.svg"
+                src="/jano/images/shape/shape_152.svg"
                 alt=""
                 className="lazy-img shapes shape-one"
                 style={{}}
               />
               <img
-                src="jano/images/shape/shape_153.svg"
+                src="/jano/images/shape/shape_153.svg"
                 alt=""
                 className="lazy-img shapes shape-two"
                 style={{}}

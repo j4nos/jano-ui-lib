@@ -5,10 +5,8 @@ import { Column } from "../Column";
 import { TitleStyleFive } from "../TitleStyleFive";
 
 export type FancyFeatureFiftyOneShape = {
-  /** Final shape image (data-src for lazy loading). */
+  /** Shape image. */
   src: string;
-  /** Placeholder shown until the lazy image loads. */
-  lazySrc?: string;
   alt?: string;
   className?: string;
 };
@@ -22,10 +20,9 @@ type FancyFeatureFiftyOneProps = {
 };
 
 const DEFAULT_SHAPE: FancyFeatureFiftyOneShape = {
-  src: "jano/images/shape/shape_172.svg",
-  lazySrc: "jano/images/lazy.svg",
+  src: "/jano/images/shape/shape_172.svg",
   alt: "",
-  className: "lazy-img shapes shape-two",
+  className: "shapes shape-two",
 };
 
 export function FancyFeatureFiftyOne({
@@ -52,10 +49,9 @@ export function FancyFeatureFiftyOne({
       </Container>
       {shape && (
         <img
-          src={shape.lazySrc ?? shape.src}
-          data-src={shape.src}
+          src={shape.src}
           alt={shape.alt ?? ""}
-          className={shape.className ?? "lazy-img shapes shape-two"}
+          className={shape.className ?? "shapes shape-two"}
         />
       )}
     </div>

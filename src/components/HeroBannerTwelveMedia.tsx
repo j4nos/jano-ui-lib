@@ -33,7 +33,7 @@ export function HeroBannerTwelveMedia({
   return (
     <div className="image-holder zn2 d-inline-block position-relative sm-mt-60">
       <img
-        src="jano/images/assets/bg-12.png"
+        src="/jano/images/assets/bg-12.png"
         alt=""
         className="lazy-img"
         style={{}}
@@ -141,13 +141,13 @@ export function HeroBannerTwelveMedia({
         </div>
       )}{" "}
       <img
-        src="jano/images/shape/shape_146.svg"
+        src="/jano/images/shape/shape_146.svg"
         alt=""
         className="shapes shape-one lazy-img"
         style={{}}
       />
       <img
-        src="jano/images/shape/shape_147.svg"
+        src="/jano/images/shape/shape_147.svg"
         alt=""
         className="shapes shape-two lazy-img"
         style={{}}

@@ -49,25 +49,25 @@ export default function FancyFeatureThirtyNine({
         </Row>
       </Container>
       <img
-        src="jano/images/shape/shape_148.svg"
+        src="/jano/images/shape/shape_148.svg"
         alt=""
         className="shapes shape-one lazy-img"
         style={{}}
       />
       <img
-        src="jano/images/shape/shape_149.svg"
+        src="/jano/images/shape/shape_149.svg"
         alt=""
         className="shapes shape-two lazy-img"
         style={{}}
       />
       <img
-        src="jano/images/shape/shape_150.svg"
+        src="/jano/images/shape/shape_150.svg"
         alt=""
         className="shapes shape-three lazy-img"
         style={{}}
       />
       <img
-        src="jano/images/shape/shape_151.svg"
+        src="/jano/images/shape/shape_151.svg"
         alt=""
         className="shapes shape-four lazy-img"
         style={{}}

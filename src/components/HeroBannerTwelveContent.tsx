@@ -31,7 +31,7 @@ export function HeroBannerTwelveContent({
         >
           <span>{primaryCtaLabel}</span>
           <img
-            src="jano/images/icon/icon_123.svg"
+            src="/jano/images/icon/icon_123.svg"
             alt=""
             className="ms-3"
           />
