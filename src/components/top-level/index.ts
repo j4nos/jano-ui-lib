@@ -15,6 +15,7 @@ export { default as FeedbackSectionTen } from "./FeedbackSectionTen";
 export * from "./Header";
 export * from "./HeroBannerFive";
 export * from "./HeroBannerThree";
+export * from "./HeroBannerSix";
 export { default as HeroBannerNine } from "./HeroBannerNine";
 export { default as HeroBannerTwelve } from "./HeroBannerTwelve";
 export * from "./JanoFooter";
