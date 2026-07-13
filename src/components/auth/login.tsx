@@ -31,6 +31,15 @@ type LoginProps = {
   onGoogleSignIn: () => void | Promise<void>;
   illustrationOneSrc?: string;
   illustrationTwoSrc?: string;
+  /**
+   * Link target for "Forgot Password?", shown next to the "Keep me logged
+   * in" checkbox - present in the original template/Netlify demo
+   * (https://jano-nextjs.netlify.app/login: "Keep me logged in" +
+   * "Forget Password?" side by side) but missing from this port until now.
+   * Set to "" to hide the link entirely (e.g. an app with no reset-password
+   * page).
+   */
+  forgotPasswordHref?: string;
 };
 
 export function Login({
@@ -44,6 +53,7 @@ export function Login({
   onGoogleSignIn,
   illustrationOneSrc,
   illustrationTwoSrc,
+  forgotPasswordHref = "/forgot-password",
 }: LoginProps) {
   function getSubmittedForm(
     formElement: HTMLFormElement,
@@ -123,15 +133,20 @@ export function Login({
             />
           </Column>
           <Column>
-            <FormCheckboxField
-              id="remember"
-              name="rememberMe"
-              label="Keep me logged in"
-              checked={form.rememberMe}
-              onChange={(event) => {
-                updateField("rememberMe", event.currentTarget.checked);
-              }}
-            />
+            <div className="d-flex justify-content-between align-items-center">
+              <FormCheckboxField
+                id="remember"
+                name="rememberMe"
+                label="Keep me logged in"
+                checked={form.rememberMe}
+                onChange={(event) => {
+                  updateField("rememberMe", event.currentTarget.checked);
+                }}
+              />
+              {forgotPasswordHref ? (
+                <Link href={forgotPasswordHref}>Forgot Password?</Link>
+              ) : null}
+            </div>
           </Column>
           <Column>
             <Button
