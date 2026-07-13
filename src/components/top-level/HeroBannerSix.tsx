@@ -43,10 +43,9 @@ export function HeroBannerSix(): ReactElement {
         <div className="illustration-holder text-center mt-45 wow fadeInUp">
           <div className="d-lg-block">
             <img
-              src="jano/images/lazy.svg"
-              data-src="jano/images/assets/ils_02.svg"
+              src="/jano/images/assets/ils_02.svg"
               alt=""
-              className="lazy-img m-auto"
+              className="m-auto"
             />
           </div>
         </div>
@@ -54,37 +53,32 @@ export function HeroBannerSix(): ReactElement {
       {/* /.container */}
       <div className="shapes shape-one rounded-circle" />
       <img
-        src="jano/images/lazy.svg"
-        data-src="jano/images/shape/shape_83.svg"
+        src="/jano/images/shape/shape_83.svg"
         alt=""
-        className="lazy-img shapes shape-two"
+        className="shapes shape-two"
       />
       <div className="shapes shape-three" />
       <img
-        src="jano/images/lazy.svg"
-        data-src="jano/images/shape/shape_84.svg"
+        src="/jano/images/shape/shape_84.svg"
         alt=""
-        className="lazy-img shapes shape-four"
+        className="shapes shape-four"
       />
       <img
-        src="jano/images/lazy.svg"
-        data-src="jano/images/shape/shape_85.svg"
+        src="/jano/images/shape/shape_85.svg"
         alt=""
-        className="lazy-img shapes shape-five"
+        className="shapes shape-five"
       />
       <div className="shapes shape-six rounded-circle" />
       <div className="shapes shape-seven rounded-circle" />
       <img
-        src="jano/images/lazy.svg"
-        data-src="jano/images/shape/shape_84.svg"
+        src="/jano/images/shape/shape_84.svg"
         alt=""
-        className="lazy-img shapes shape-eight"
+        className="shapes shape-eight"
       />
       <img
-        src="jano/images/lazy.svg"
-        data-src="jano/images/shape/shape_83.svg"
+        src="/jano/images/shape/shape_83.svg"
         alt=""
-        className="lazy-img shapes shape-nine"
+        className="shapes shape-nine"
       />
     </div>
   );
