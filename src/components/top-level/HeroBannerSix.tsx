@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, type ReactElement, type ReactNode } from "react";
+import { useId, useState, type FormEvent, type ReactElement, type ReactNode } from "react";
 
 export type HeroBannerSixFieldType = "text" | "file";
 
@@ -20,6 +20,10 @@ export type HeroBannerSixProps = {
   signInHref?: string;
   /** Called on submit with the text value or the selected file, depending on `fieldType`. */
   onSubmit?: (value: string | File | null) => void;
+  /** Icon used for the "shape-four"/"shape-eight" decorative shapes. Override for e.g. a play-button icon on a video-upload flow. */
+  playIconSrc?: string;
+  /** Illustration shown under the form. Override to match the flow (e.g. a video icon for a video-upload flow). */
+  illustrationSrc?: string;
 };
 
 /**
@@ -45,9 +49,12 @@ export function HeroBannerSix({
   signInLabel = "Sign in.",
   signInHref = "signin.html",
   onSubmit,
+  playIconSrc = "/jano/images/shape/shape_84.svg",
+  illustrationSrc = "/jano/images/assets/ils_02.svg",
 }: HeroBannerSixProps): ReactElement {
   const [textValue, setTextValue] = useState("");
   const [file, setFile] = useState<File | null>(null);
+  const fileInputId = useId();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -67,14 +74,25 @@ export function HeroBannerSix({
             >
               <form onSubmit={handleSubmit} className="position-relative">
                 {fieldType === "file" ? (
-                  <input
-                    type="file"
-                    accept={fieldAccept}
-                    aria-label={fieldLabel}
-                    onChange={(event) =>
-                      setFile(event.target.files?.[0] ?? null)
-                    }
-                  />
+                  // A label wrapping a visually-hidden (not display:none —
+                  // stays focusable/clickable) native file input, so the
+                  // OS-drawn "choose file" control never appears next to
+                  // the existing submit CTA. Style the label via
+                  // `.hero-banner-six .subscribe-form .file-drop-label` in
+                  // the consuming app; unstyled, it still renders and
+                  // works (default label chrome, click-to-open behavior).
+                  <label htmlFor={fileInputId} className="file-drop-label">
+                    {file ? file.name : fieldLabel}
+                    <input
+                      id={fileInputId}
+                      type="file"
+                      accept={fieldAccept}
+                      aria-label={fieldLabel}
+                      onChange={(event) =>
+                        setFile(event.target.files?.[0] ?? null)
+                      }
+                    />
+                  </label>
                 ) : (
                   <input
                     type="email"
@@ -104,11 +122,7 @@ export function HeroBannerSix({
         </div>
         <div className="illustration-holder text-center mt-45 wow fadeInUp">
           <div className="d-lg-block">
-            <img
-              src="/jano/images/assets/ils_02.svg"
-              alt=""
-              className="m-auto"
-            />
+            <img src={illustrationSrc} alt="" className="m-auto" />
           </div>
         </div>
       </div>{" "}
@@ -120,11 +134,7 @@ export function HeroBannerSix({
         className="shapes shape-two"
       />
       <div className="shapes shape-three" />
-      <img
-        src="/jano/images/shape/shape_84.svg"
-        alt=""
-        className="shapes shape-four"
-      />
+      <img src={playIconSrc} alt="" className="shapes shape-four" />
       <img
         src="/jano/images/shape/shape_85.svg"
         alt=""
@@ -132,11 +142,7 @@ export function HeroBannerSix({
       />
       <div className="shapes shape-six rounded-circle" />
       <div className="shapes shape-seven rounded-circle" />
-      <img
-        src="/jano/images/shape/shape_84.svg"
-        alt=""
-        className="shapes shape-eight"
-      />
+      <img src={playIconSrc} alt="" className="shapes shape-eight" />
       <img
         src="/jano/images/shape/shape_83.svg"
         alt=""
