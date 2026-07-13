@@ -17,9 +17,7 @@ export function FormField({
   label,
   required = false,
   children,
-  // Match the Jano `blog-comment-form` template — every input wrapper carries
-  // a `mb-35` bottom margin between rows so the form has breathing room.
-  className = "input-wrapper mb-35",
+  className = "input-wrapper",
   description,
   labelClassName,
 }: FormFieldProps) {
