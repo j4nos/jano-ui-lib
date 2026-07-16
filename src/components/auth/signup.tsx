@@ -49,6 +49,8 @@ type SignupProps = {
   onGoogleSignIn: () => void | Promise<void>;
   illustrationOneSrc?: string;
   illustrationTwoSrc?: string;
+  /** Footer copyright line, forwarded to AuthPageShell. */
+  copyrightText?: string;
 };
 
 export function Signup({
@@ -68,6 +70,7 @@ export function Signup({
   onGoogleSignIn,
   illustrationOneSrc,
   illustrationTwoSrc,
+  copyrightText,
 }: SignupProps) {
   function getSubmittedRegistrationForm(
     formElement: HTMLFormElement,
@@ -106,6 +109,7 @@ export function Signup({
       title={needsConfirmation ? "Confirm registration" : "Registration"}
       illustrationOneSrc={illustrationOneSrc}
       illustrationTwoSrc={illustrationTwoSrc}
+      copyrightText={copyrightText}
       subtitle={
         <>
           Have an account? Login <Link href="/login">Here</Link>

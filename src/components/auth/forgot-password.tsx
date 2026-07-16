@@ -43,6 +43,8 @@ type ForgotPasswordProps = {
   onResendCode: () => void | Promise<void>;
   illustrationOneSrc?: string;
   illustrationTwoSrc?: string;
+  /** Footer copyright line, forwarded to AuthPageShell. */
+  copyrightText?: string;
 };
 
 // Same two-step shape as Signup (request -> confirm-with-code), since
@@ -66,6 +68,7 @@ export function ForgotPassword({
   onResendCode,
   illustrationOneSrc,
   illustrationTwoSrc,
+  copyrightText,
 }: ForgotPasswordProps) {
   function getSubmittedRequestForm(
     formElement: HTMLFormElement,
@@ -96,6 +99,7 @@ export function ForgotPassword({
       title={codeSent ? "Reset password" : "Forgot password"}
       illustrationOneSrc={illustrationOneSrc}
       illustrationTwoSrc={illustrationTwoSrc}
+      copyrightText={copyrightText}
       subtitle={
         <>
           Remembered your password? Login <Link href="/login">Here</Link>

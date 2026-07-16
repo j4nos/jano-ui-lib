@@ -10,6 +10,12 @@ type AuthPageShellProps = {
   illustrationOneSrc?: string;
   /** Bottom-left illustration. Defaults to the Jano theme asset. */
   illustrationTwoSrc?: string;
+  /**
+   * Footer copyright line. Defaults to the original Jano theme text so
+   * existing consumers don't need to change anything; pass this to brand
+   * it for your own product.
+   */
+  copyrightText?: string;
 };
 
 export function AuthPageShell({
@@ -18,6 +24,7 @@ export function AuthPageShell({
   children,
   illustrationOneSrc = "/jano/images/assets/ils_11.png",
   illustrationTwoSrc = "/jano/images/assets/ils_12.png",
+  copyrightText = "Copyright @2026 Snoopyon.",
 }: AuthPageShellProps) {
   return (
     <div className="user-data-section d-flex align-items-center justify-content-center flex-column position-relative">
@@ -28,7 +35,7 @@ export function AuthPageShell({
         </div>
         {children}
       </div>
-      <p className="mt-auto pt-50">Copyright @2026 Snoopyon.</p>
+      <p className="mt-auto pt-50">{copyrightText}</p>
       <img
         src={illustrationOneSrc}
         alt="illustration"

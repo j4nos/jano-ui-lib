@@ -93,7 +93,19 @@ export function FormCheckboxField({
         >
           {checked ? "" : ""}
         </span>
-        {label}
+        {/*
+          `label` is a caller-supplied ReactNode and, in practice (see
+          signup.tsx's Terms/Privacy agreement text), is often a Fragment
+          wrapping several children (text + Link + text + Link + text).
+          The parent <label> above is display:inline-flex with a gap, so
+          without this wrapper each of the Fragment's children would be
+          inserted as its own direct flex item - React/JSX don't add a DOM
+          node for a Fragment - and would end up spaced apart and wrapping
+          independently instead of flowing as one line of text. Wrapping in
+          a single <span> makes `label` exactly one flex item, so its own
+          children lay out normally (inline) inside it.
+        */}
+        <span>{label}</span>
       </label>
     </div>
   );

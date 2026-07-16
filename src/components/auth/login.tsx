@@ -31,6 +31,8 @@ type LoginProps = {
   onGoogleSignIn: () => void | Promise<void>;
   illustrationOneSrc?: string;
   illustrationTwoSrc?: string;
+  /** Footer copyright line, forwarded to AuthPageShell. */
+  copyrightText?: string;
   /**
    * Link target for "Forgot Password?", shown next to the "Keep me logged
    * in" checkbox - present in the original template/Netlify demo
@@ -53,6 +55,7 @@ export function Login({
   onGoogleSignIn,
   illustrationOneSrc,
   illustrationTwoSrc,
+  copyrightText,
   forgotPasswordHref = "/forgot-password",
 }: LoginProps) {
   function getSubmittedForm(
@@ -78,6 +81,7 @@ export function Login({
       title="Login"
       illustrationOneSrc={illustrationOneSrc}
       illustrationTwoSrc={illustrationTwoSrc}
+      copyrightText={copyrightText}
       subtitle={
         <>
           Still don&apos;t have an account? <Link href="/signup">Sign up</Link>
