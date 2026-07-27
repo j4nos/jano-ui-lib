@@ -9,6 +9,15 @@ export type CompareTableColumn = {
 };
 
 export type CompareTableRow = {
+  /**
+   * Stable React key for this row, independent of the visible label -
+   * callers whose rows can share a display label (e.g. one row per ticket,
+   * labelled with the buyer's name, where the same buyer can have several
+   * tickets in one order) MUST pass a genuinely unique id here. Falls back
+   * to `label` when omitted, matching the previous (label-as-key) behavior
+   * for existing callers whose labels are already unique.
+   */
+  id?: string;
   /** Row header (the feature name). */
   label: string;
   /**
@@ -108,25 +117,28 @@ export function CompareTable({
                 </tr>
               </thead>
               <tbody>
-                {rows.map((row) => (
-                  <tr key={row.label} className={row.className}>
-                    <th scope="row">{row.label}</th>
-                    {columns.map((column, columnIndex) => {
-                      const value = row.values[columnIndex];
-                      const cellContent =
-                        typeof value === "boolean"
-                          ? value
-                            ? checkmark
-                            : null
-                          : (value ?? null);
-                      return (
-                        <td key={`${row.label}-${column.label}`}>
-                          {cellContent}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
+                {rows.map((row) => {
+                  const rowKey = row.id ?? row.label;
+                  return (
+                    <tr key={rowKey} className={row.className}>
+                      <th scope="row">{row.label}</th>
+                      {columns.map((column, columnIndex) => {
+                        const value = row.values[columnIndex];
+                        const cellContent =
+                          typeof value === "boolean"
+                            ? value
+                              ? checkmark
+                              : null
+                            : (value ?? null);
+                        return (
+                          <td key={`${rowKey}-${column.label}`}>
+                            {cellContent}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
