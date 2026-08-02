@@ -62,6 +62,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 Presentational only: feed components from your own Amplify Data/Auth
 view-models (e.g. `Header`'s `isAuthenticated` / `onLogout`).
 
+`style.css` (and the other theme assets copied under `public/jano/`) must not be modified.
+
 ## Usage
 
 Everything imports from the root:
