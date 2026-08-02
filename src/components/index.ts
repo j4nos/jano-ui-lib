@@ -18,6 +18,7 @@ export * from "./CategoryCard";
 export * from "./CheckmarkList";
 export * from "./Column";
 export * from "./Container";
+export * from "./CookieConsentBanner";
 export * from "./DataCardGrid";
 export * from "./FeatureCard";
 export * from "./FilterTags";
