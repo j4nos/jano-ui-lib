@@ -1,5 +1,9 @@
 import type { ReactElement } from "react";
 import type { BlogCommentForm } from "./BlogCommentForm";
+import type { BlogSidebar } from "./BlogSidebar";
+import type { DataCardGrid } from "./DataCardGrid";
+import type { StatusMessage } from "./StatusMessage";
+import type { TitleStyleThree } from "./TitleStyleThree";
 import type { FormButton } from "./FormButton";
 import type { FormToggleButtonGroup } from "./FormToggleButtonGroup";
 import type { FilterTags } from "./FilterTags";
@@ -69,6 +73,10 @@ export type FormChild =
   | ReactElement<unknown, typeof FooterSocialLinks>
   | ReactElement<unknown, typeof FooterCopyright>
   | ReactElement<unknown, typeof FormSectionLabel>
-  | ReactElement<unknown, typeof FilterTags>;
+  | ReactElement<unknown, typeof FilterTags>
+  | ReactElement<unknown, typeof TitleStyleThree>
+  | ReactElement<unknown, typeof DataCardGrid>
+  | ReactElement<unknown, typeof StatusMessage>
+  | ReactElement<unknown, typeof BlogSidebar>;
 
 export type FormChildren = FormChild | Array<FormChild | null | false>;
