@@ -13,6 +13,7 @@ export * from "./BlogSidebar";
 export * from "./BlogSidebarCategory";
 export * from "./BrandWordmark";
 export * from "./Button";
+export * from "./YouTubeEmbed";
 export * from "./FormButton";
 export * from "./CopyButton";
 export * from "./CtaButton";

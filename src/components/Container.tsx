@@ -3,12 +3,14 @@ import type { BlogCommentForm } from "./BlogCommentForm";
 import type { Row } from "./Row";
 import type { StatusMessage } from "./StatusMessage";
 import type { ProjectPaginationOne } from "./top-level/ProjectPaginationOne";
+import type { YouTubeEmbed } from "./YouTubeEmbed";
 
 export type ContainerChild =
   | ReactElement<unknown, typeof Row>
   | ReactElement<unknown, typeof BlogCommentForm>
   | ReactElement<unknown, typeof StatusMessage>
-  | ReactElement<unknown, typeof ProjectPaginationOne>;
+  | ReactElement<unknown, typeof ProjectPaginationOne>
+  | ReactElement<unknown, typeof YouTubeEmbed>;
 
 export type ContainerChildren =
   | ContainerChild
