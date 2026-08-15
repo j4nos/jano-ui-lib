@@ -23,6 +23,7 @@ export * from "./Column";
 export * from "./Container";
 export * from "./CookieConsentBanner";
 export * from "./DataCardGrid";
+export * from "./Divider";
 export * from "./FeatureCard";
 export * from "./FilterTags";
 export * from "./GoalCard";

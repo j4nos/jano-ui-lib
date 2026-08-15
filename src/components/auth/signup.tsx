@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "../Button";
 import { Column } from "../Column";
+import { Divider } from "../Divider";
 import { Form } from "../Form";
 import { Row } from "../Row";
 import { FormCheckboxField } from "../forms/FormCheckboxField";
@@ -148,6 +149,9 @@ export function Signup({
               >
                 Continue with Google
               </Button>
+            </Column>
+            <Column>
+              <Divider className="mb-30" />
             </Column>
             <Column>
               <AuthInputField
