@@ -137,6 +137,19 @@ export function Signup({
         >
           <Row>
             <Column>
+              <Button
+                type="button"
+                tone="form"
+                className="w-100 text-uppercase mb-30"
+                disabled={isSubmitting}
+                onClick={() => {
+                  void onGoogleSignIn();
+                }}
+              >
+                Continue with Google
+              </Button>
+            </Column>
+            <Column>
               <AuthInputField
                 id="name"
                 label="Name"
@@ -216,19 +229,6 @@ export function Signup({
                 }}
               >
                 {isSubmitting ? "Registering..." : "Sign Up"}
-              </Button>
-            </Column>
-            <Column>
-              <Button
-                type="button"
-                tone="form"
-                className="w-100 text-uppercase mt-20"
-                disabled={isSubmitting}
-                onClick={() => {
-                  void onGoogleSignIn();
-                }}
-              >
-                Continue with Google
               </Button>
             </Column>
           </Row>
