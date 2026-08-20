@@ -29,6 +29,8 @@ export * from "./GoalCard";
 export * from "./Heading";
 export * from "./PricingPlanCard";
 export * from "./FancyFeatureThirtyOneCard";
+export * from "./FancyShortBannerSixteenContent";
+export * from "./FancyShortBannerSixteenAction";
 export * from "./FancyFeatureThirtyOneTitle";
 export * from "./HeroBannerNineContent";
 export * from "./HeroBannerNineGalleryLeft";

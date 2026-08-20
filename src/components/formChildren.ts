@@ -9,6 +9,8 @@ import type { FormToggleButtonGroup } from "./FormToggleButtonGroup";
 import type { FilterTags } from "./FilterTags";
 import type { FormSectionLabel } from "./forms/FormSectionLabel";
 import type { CategoryCard, MoreCategoryCard } from "./CategoryCard";
+import type { FancyShortBannerSixteenContent } from "./FancyShortBannerSixteenContent";
+import type { FancyShortBannerSixteenAction } from "./FancyShortBannerSixteenAction";
 import type { Column } from "./Column";
 import type { FancyFeatureThirtyOneCard } from "./FancyFeatureThirtyOneCard";
 import type { FancyFeatureThirtyOneTitle } from "./FancyFeatureThirtyOneTitle";
@@ -77,6 +79,8 @@ export type FormChild =
   | ReactElement<unknown, typeof TitleStyleThree>
   | ReactElement<unknown, typeof DataCardGrid>
   | ReactElement<unknown, typeof StatusMessage>
-  | ReactElement<unknown, typeof BlogSidebar>;
+  | ReactElement<unknown, typeof BlogSidebar>
+  | ReactElement<unknown, typeof FancyShortBannerSixteenContent>
+  | ReactElement<unknown, typeof FancyShortBannerSixteenAction>;
 
 export type FormChildren = FormChild | Array<FormChild | null | false>;

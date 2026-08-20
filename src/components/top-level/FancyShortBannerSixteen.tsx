@@ -1,7 +1,10 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { Button } from "../Button";
+import { Row } from "../Row";
+import { Column } from "../Column";
+import { FancyShortBannerSixteenContent } from "../FancyShortBannerSixteenContent";
+import { FancyShortBannerSixteenAction } from "../FancyShortBannerSixteenAction";
 
 type FancyShortBannerSixteenProps = {
   eyebrow: string;
@@ -20,47 +23,13 @@ export function FancyShortBannerSixteen({
   eyebrow,
   title,
   description,
-  button: buttonProp,
+  button,
   buttonLabel,
   href,
   disabled,
   onButtonClick,
   className = "mt-150",
 }: FancyShortBannerSixteenProps) {
-  let button: ReactNode = buttonProp ?? null;
-
-  if (!button && buttonLabel) {
-    if (disabled) {
-      button = (
-        <span
-          className="btn-twentyOne fw-500"
-          aria-disabled="true"
-          style={{ opacity: 0.6, cursor: "default", pointerEvents: "none" }}
-        >
-          {buttonLabel}
-        </span>
-      );
-    } else if (href) {
-      button = (
-        <Button href={href} tone="pill">
-          {buttonLabel}
-        </Button>
-      );
-    } else {
-      button = (
-        <Button
-          type="button"
-          tone="pill"
-          onClick={() => {
-            onButtonClick?.();
-          }}
-        >
-          {buttonLabel}
-        </Button>
-      );
-    }
-  }
-
   return (
     <div
       className={`fancy-short-banner-sixteen ${className} aos-init aos-animate`}
@@ -68,24 +37,28 @@ export function FancyShortBannerSixteen({
     >
       <div className="container">
         <div className="bg-wrapper pt-65 pb-65 lg-pt-40 lg-pb-40">
-          <div className="row">
-            <div className="col-xl-10 col-md-11 m-auto">
-              <div className="row align-items-center">
-                <div className="col-lg-6">
-                  <div className="text-wrapper text-center text-lg-start md-pb-30">
-                    <div className="sc-title fs-18 pb-10">{eyebrow}</div>
-                    <h2 className="main-title fw-500 text-white m0">{title}</h2>
-                    {description ? (
-                      <div className="mt-20 text-white">{description}</div>
-                    ) : null}
-                  </div>
-                </div>
-                <div className="col-lg-5 ms-auto text-center text-lg-end">
-                  {button}
-                </div>
-              </div>
-            </div>
-          </div>
+          <Row>
+            <Column className="col-xl-10 col-md-11 m-auto">
+              <Row className="align-items-center">
+                <Column className="col-lg-6">
+                  <FancyShortBannerSixteenContent
+                    eyebrow={eyebrow}
+                    title={title}
+                    description={description}
+                  />
+                </Column>
+                <Column className="col-lg-5 ms-auto text-center text-lg-end">
+                  <FancyShortBannerSixteenAction
+                    button={button}
+                    buttonLabel={buttonLabel}
+                    href={href}
+                    disabled={disabled}
+                    onButtonClick={onButtonClick}
+                  />
+                </Column>
+              </Row>
+            </Column>
+          </Row>
         </div>
       </div>
     </div>
