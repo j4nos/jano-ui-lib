@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactElement } from "react";
-import { BlogCommentForm } from "../BlogCommentForm";
+import { Form } from "../Form";
 import { BlogSectionSevenColumn } from "../BlogSectionSevenColumn";
 import { DataCardGrid } from "../DataCardGrid";
 import FancyFeatureFortyOneAccordion from "../FancyFeatureFortyOneAccordion";
@@ -14,7 +14,7 @@ import type { FancyFeatureFortyOneAccordionProps } from "../FancyFeatureFortyOne
 export type BlogSectionSevenBlock =
   | ReactElement<TitleStyleThreeProps, typeof TitleStyleThree>
   | ReactElement<DataCardGridProps, typeof DataCardGrid>
-  | ReactElement<any, typeof BlogCommentForm>
+  | ReactElement<any, typeof Form>
   | ReactElement<BlogSectionSevenColumnProps, typeof BlogSectionSevenColumn>
   | ReactElement<FancyFeatureFortyOneAccordionProps, typeof FancyFeatureFortyOneAccordion>;
 

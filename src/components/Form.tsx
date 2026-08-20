@@ -1,18 +1,26 @@
-import { type ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithoutRef } from "react";
+import { FormContent } from "./FormContent";
 import type { FormChildren } from "./formChildren";
 
-export type { FormChild, FormChildren } from "./formChildren";
-
-type FormProps = Omit<ComponentPropsWithoutRef<"form">, "children"> & {
+type FormProps = Omit<
+  ComponentPropsWithoutRef<"form">,
+  "children" | "className" | "id"
+> & {
   children: FormChildren;
+  id?: string;
+  className?: string;
 };
 
-export function Form({ className = "", children, ...props }: FormProps) {
-  const classes = [className].filter(Boolean).join(" ");
-
+export function Form({
+  children,
+  id,
+  className = "",
+  ...formProps
+}: FormProps) {
+  const classes = ["blog-comment-form", className].filter(Boolean).join(" ");
   return (
-    <form className={classes} {...props}>
-      {children}
-    </form>
+    <div id={id} className={classes}>
+      <FormContent {...formProps}>{children}</FormContent>
+    </div>
   );
 }

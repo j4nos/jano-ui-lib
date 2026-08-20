@@ -3,7 +3,7 @@ export * from "./Block";
 export * from "./BlockStyleEight";
 export { default as BlogCommentArea } from "./BlogCommentArea";
 export type { BlogComment } from "./BlogCommentArea";
-export * from "./BlogCommentForm";
+export * from "./Form";
 export * from "./BlogDetailsSection";
 export * from "./BlogSectionSevenColumn";
 export * from "./BlogMetaFive";

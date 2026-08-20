@@ -9,7 +9,7 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
  * pill looks (filled vs. faint outline). This keeps `FormButton` itself
  * minimal and untouched for plain in-form actions, while still giving
  * toggle-style filters a dedicated, lint-legal component to use instead of a
- * raw `<button>` inside Form/BlogCommentForm/PanelForm.
+ * raw `<button>` inside FormContent/Form/PanelForm.
  */
 type FormTogglePillButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

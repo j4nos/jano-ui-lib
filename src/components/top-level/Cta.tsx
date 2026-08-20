@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { Container } from "../Container";
 import { FancyShortBannerSixteenPanel } from "../FancyShortBannerSixteenPanel";
 
-type FancyShortBannerSixteenProps = {
+type CtaProps = {
   eyebrow: string;
   title: ReactNode;
   description?: ReactNode;
@@ -17,7 +17,7 @@ type FancyShortBannerSixteenProps = {
   className?: string;
 };
 
-export function FancyShortBannerSixteen({
+export function Cta({
   eyebrow,
   title,
   description,
@@ -27,7 +27,7 @@ export function FancyShortBannerSixteen({
   disabled,
   onButtonClick,
   className = "mt-150",
-}: FancyShortBannerSixteenProps) {
+}: CtaProps) {
   return (
     <div
       className={`fancy-short-banner-sixteen ${className} aos-init aos-animate`}

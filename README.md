@@ -130,20 +130,20 @@ Layout/primitives: `MainPageWrapper` `Block` `Flex` `Row` `Column` `List`
 `Select` `StatusMessage` `ToastIndicator` `TitleStyleThree` `PageSubnav`
 `CheckmarkList` `ModuleDialogue`.
 
-Forms: `Form` `FormSubmitButton` `PanelForm` `Fieldset` `FormField`
+Forms: `FormSubmitButton` `PanelForm` `Fieldset` `FormField`
 `TextInputField` `TextAreaField` `SelectField` `CheckboxField` `RadioGroupField`
 `FileInputField` `ImageUploadField`.
 
 Auth: `AuthInputField` `AuthPasswordField` `AuthPageShell` `Login` `Signup`.
 
-Blog/content: `BlogCommentArea` `BlogCommentForm` `BlogDetailsSection`
+Blog/content: `BlogCommentArea` `Form` `BlogDetailsSection`
 `BlogSectionFive` `BlogSectionSeven` `BlogSectionSevenColumn`
 `BlogMetaSeven` `BlogMetaThree` `BlockStyleEight`.
 
 Sections: `Header` `JanoFooter` `HeroBannerNine` `HeroBannerTwelve`
 `FancyFeatureForty(One|OneAccordion)` `FancyFeatureThirty(One|Eight|Nine)`
-`FancyFeatureThirteen` `FancyShortBannerSixteen` `FeedbackSectionTen`
-`CompareTable` `PriceSectionThree` `PagePaginationOne` `ErrorPageContent`.
+`FancyFeatureThirteen` `Cta` `FeedbackSectionTen`
+`Table` `PriceSectionThree` `PagePaginationOne` `ErrorPageContent`.
 
 Typography: `Heading` (h1–h6 wrapper).
 

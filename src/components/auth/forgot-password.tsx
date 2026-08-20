@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "../Button";
 import { Column } from "../Column";
-import { Form } from "../Form";
+import { FormContent } from "../FormContent";
 import { Row } from "../Row";
 import { AuthInputField } from "./AuthInputField";
 import { AuthPageShell } from "./AuthPageShell";
@@ -117,7 +117,7 @@ export function ForgotPassword({
       {error ? <StatusMessage tone="error">{error}</StatusMessage> : null}
 
       {!codeSent ? (
-        <Form
+        <FormContent
           className="user-data-form mt-40 lg-mt-30"
           method="post"
           onSubmit={(event) => {
@@ -160,9 +160,9 @@ export function ForgotPassword({
               </Button>
             </Column>
           </Row>
-        </Form>
+        </FormContent>
       ) : (
-        <Form
+        <FormContent
           className="user-data-form mt-40 lg-mt-30"
           method="post"
           onSubmit={(event) => {
@@ -242,7 +242,7 @@ export function ForgotPassword({
               </Button>
             </Column>
           </Row>
-        </Form>
+        </FormContent>
       )}
     </AuthPageShell>
   );

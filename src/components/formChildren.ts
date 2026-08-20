@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import type { BlogCommentForm } from "./BlogCommentForm";
+import type { Form } from "./Form";
 import type { BlogSidebar } from "./BlogSidebar";
 import type { DataCardGrid } from "./DataCardGrid";
 import type { StatusMessage } from "./StatusMessage";
@@ -41,7 +41,7 @@ import type { TextAreaField } from "./forms/TextAreaField";
 import type { TextInputField } from "./forms/TextInputField";
 
 export type FormChild =
-  | ReactElement<unknown, typeof BlogCommentForm>
+  | ReactElement<unknown, typeof Form>
   | ReactElement<unknown, typeof TextInputField>
   | ReactElement<unknown, typeof TextAreaField>
   | ReactElement<unknown, typeof SelectField>

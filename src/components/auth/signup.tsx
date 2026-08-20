@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "../Button";
 import { Column } from "../Column";
 import { Divider } from "../Divider";
-import { Form } from "../Form";
+import { FormContent } from "../FormContent";
 import { Row } from "../Row";
 import { FormCheckboxField } from "../forms/FormCheckboxField";
 import { AuthInputField } from "./AuthInputField";
@@ -128,7 +128,7 @@ export function Signup({
       {error ? <StatusMessage tone="error">{error}</StatusMessage> : null}
 
       {!needsConfirmation ? (
-        <Form
+        <FormContent
           className="user-data-form mt-40 lg-mt-30"
           method="post"
           onSubmit={(event) => {
@@ -236,9 +236,9 @@ export function Signup({
               </Button>
             </Column>
           </Row>
-        </Form>
+        </FormContent>
       ) : (
-        <Form
+        <FormContent
           className="user-data-form mt-40 lg-mt-30"
           method="post"
           onSubmit={(event) => {
@@ -305,7 +305,7 @@ export function Signup({
               </Button>
             </Column>
           </Row>
-        </Form>
+        </FormContent>
       )}
     </AuthPageShell>
   );

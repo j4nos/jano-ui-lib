@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "../Button";
 import { Column } from "../Column";
-import { Form } from "../Form";
+import { FormContent } from "../FormContent";
 import { Row } from "../Row";
 import { FormCheckboxField } from "../forms/FormCheckboxField";
 import { AuthInputField } from "./AuthInputField";
@@ -98,7 +98,7 @@ export function Login({
       ) : null}
       {error ? <StatusMessage tone="error">{error}</StatusMessage> : null}
 
-      <Form
+      <FormContent
         className="user-data-form mt-40 lg-mt-30"
         method="post"
         onSubmit={(event) => {
@@ -180,7 +180,7 @@ export function Login({
             </Button>
           </Column>
         </Row>
-      </Form>
+      </FormContent>
     </AuthPageShell>
   );
 }

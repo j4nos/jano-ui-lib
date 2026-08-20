@@ -16,7 +16,7 @@ type FormToggleButtonGroupProps = {
 };
 
 /**
- * The one component Form/BlogCommentForm/Column should be given when you
+ * The one component FormContent/Form/Column should be given when you
  * need a row of toggle/filter pill buttons (e.g. "Remote / Hybrid /
  * On-site"). Internally it's just a <Flex> of <FormTogglePillButton>s — this
  * wrapper exists so call sites never need a raw <button> (or a bare <Flex>,

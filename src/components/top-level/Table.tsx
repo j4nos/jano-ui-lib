@@ -1,14 +1,14 @@
 import type { ReactNode } from "react";
 import { PagePaginationOne } from "./PagePaginationOne";
 
-export type CompareTableColumn = {
+export type TableColumn = {
   /** Visible header label (typically a product / plan / provider name). */
   label: string;
   /** Optional class on the `<th>` (e.g. for highlighting the "us" column). */
   className?: string;
 };
 
-export type CompareTableRow = {
+export type TableRow = {
   /**
    * Stable React key for this row, independent of the visible label -
    * callers whose rows can share a display label (e.g. one row per ticket,
@@ -29,9 +29,9 @@ export type CompareTableRow = {
   className?: string;
 };
 
-type CompareTableProps = {
-  columns: CompareTableColumn[];
-  rows: CompareTableRow[];
+type TableProps = {
+  columns: TableColumn[];
+  rows: TableRow[];
   /** Header text for the row-label column (first `<th>`, blank by default). */
   rowHeaderLabel?: string;
   /** Optional title rendered above the table (matching the Jano `title-style-seven` pattern). */
@@ -77,7 +77,7 @@ const DEFAULT_CHECKMARK = (
  * and the component renders a Bootstrap-table inside a `.table-responsive`
  * wrapper, matching the template markup so the existing CSS picks it up.
  */
-export function CompareTable({
+export function Table({
   columns,
   rows,
   rowHeaderLabel,
@@ -86,7 +86,7 @@ export function CompareTable({
   checkmark = DEFAULT_CHECKMARK,
   className = "mt-150 lg-mt-100",
   pagination,
-}: CompareTableProps) {
+}: TableProps) {
   return (
     <div className={`hosting-compare-table ${className}`.trim()}>
       <div className="container">

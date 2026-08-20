@@ -1,7 +1,7 @@
 export * from "./BlogSectionFive";
 export { default as BlogSectionTwo } from "./BlogSectionTwo";
 export * from "./BlogSectionSeven";
-export * from "./CompareTable";
+export * from "./Table";
 export * from "./ErrorPageContent";
 export { default as FancyFeatureForty } from "./FancyFeatureForty";
 export { default as FancyFeatureFortyOne } from "./FancyFeatureFortyOne";
@@ -9,7 +9,7 @@ export * from "./FancyFeatureFiftyOne";
 export { default as FancyFeatureThirtyOne } from "./FancyFeatureThirtyOne";
 export { default as FancyFeatureThirtyEight } from "./FancyFeatureThirtyEight";
 export { default as FancyFeatureThirtyNine } from "./FancyFeatureThirtyNine";
-export * from "./FancyShortBannerSixteen";
+export * from "./Cta";
 export { default as FeedbackCarousel } from "./FeedbackCarousel";
 export { default as FeedbackSectionTen } from "./FeedbackSectionTen";
 export * from "./Header";
