@@ -31,6 +31,7 @@ export * from "./PricingPlanCard";
 export * from "./FancyFeatureThirtyOneCard";
 export * from "./FancyShortBannerSixteenContent";
 export * from "./FancyShortBannerSixteenAction";
+export * from "./FancyShortBannerSixteenPanel";
 export * from "./FancyFeatureThirtyOneTitle";
 export * from "./HeroBannerNineContent";
 export * from "./HeroBannerNineGalleryLeft";

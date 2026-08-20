@@ -4,13 +4,15 @@ import type { Row } from "./Row";
 import type { StatusMessage } from "./StatusMessage";
 import type { ProjectPaginationOne } from "./top-level/ProjectPaginationOne";
 import type { YouTubeEmbed } from "./YouTubeEmbed";
+import type { FancyShortBannerSixteenPanel } from "./FancyShortBannerSixteenPanel";
 
 export type ContainerChild =
   | ReactElement<unknown, typeof Row>
   | ReactElement<unknown, typeof BlogCommentForm>
   | ReactElement<unknown, typeof StatusMessage>
   | ReactElement<unknown, typeof ProjectPaginationOne>
-  | ReactElement<unknown, typeof YouTubeEmbed>;
+  | ReactElement<unknown, typeof YouTubeEmbed>
+  | ReactElement<unknown, typeof FancyShortBannerSixteenPanel>;
 
 export type ContainerChildren =
   | ContainerChild
