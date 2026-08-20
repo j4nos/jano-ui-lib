@@ -126,7 +126,7 @@ rebuild (`npm run build`), then `npm install` in the consuming app.
 ## Components
 
 Layout/primitives: `MainPageWrapper` `Block` `Flex` `Row` `Column` `List`
-`ListItem` `Button` `CtaButton` `CopyButton` `BrandWordmark` `DataCardGrid`
+`ListItem` `Button` `CopyButton` `BrandWordmark` `DataCardGrid`
 `Select` `StatusMessage` `ToastIndicator` `TitleStyleThree` `PageSubnav`
 `CheckmarkList` `ModuleDialogue`.
 

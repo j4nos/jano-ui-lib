@@ -16,7 +16,6 @@ export * from "./Button";
 export * from "./YouTubeEmbed";
 export * from "./FormButton";
 export * from "./CopyButton";
-export * from "./CtaButton";
 export * from "./CategoryCard";
 export * from "./CheckmarkList";
 export * from "./Column";
